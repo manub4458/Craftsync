@@ -165,7 +165,8 @@
 						.
 					</a>
 				</span>
-				<form method="post" action="send/form.php" class="form">
+				<form id="contact-form" class="form">
+					<!-- Form fields go here as you've written them -->
 					<div class="form-group-wrapper">
 						<span>Name<small>*</small></span>
 						<div class="form-group">
@@ -217,11 +218,10 @@
 							</select>
 						</div>
 					</div>
-					<p class="form-status">Thank you! We contact you soon.</p>
-					<button type="submit" class="btn">
-						Submit
-					</button>
+					<p class="form-status" id="form-status">Thank you! We will contact you soon.</p>
+					<button type="submit" class="btn">Submit</button>
 				</form>
+				
 			</div>
 		</div>
 	</section>
@@ -230,9 +230,9 @@
 		<div class="container">
 			<a href="#" class="logo">
 				<!-- <img src="images/footer-logo.svg" alt=""> -->
-				
-					THE CRAFTSYNC
-			
+
+				THE CRAFTSYNC
+
 			</a>
 			<div class="footer-nav">
 				<div class="footer-nav__item">
@@ -312,6 +312,41 @@
 		</div>
 	</footer>
 	<script src="dist/main.js?v=07112023"></script>
+	<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+    <script type="text/javascript">
+        // Initialize EmailJS
+        emailjs.init('desG5B5sH6mY5bCTj'); // Replace with your actual EmailJS public key
+
+        // Add event listener for form submission
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Collect form data
+            const templateParams = {
+                name: document.querySelector('input[name="name"]').value,
+                surname: document.querySelector('input[name="surname"]').value,
+                tg: document.querySelector('input[name="tg"]').value,
+                email: document.querySelector('input[name="email"]').value,
+                direction: document.querySelector('select[name="direction"]').value,
+                budget: document.querySelector('select[name="budget"]').value
+            };
+
+			console.log('Form data:', templateParams); // Log the form data to the console
+
+            // Send form data via EmailJS
+            emailjs.send('service_fa43xnh', 'template_btd4e8a', templateParams)
+                .then((response) => {
+                    console.log('Email sent successfully!', response.status, response.text);
+                    document.getElementById('form-status').textContent = "Thank you! We will contact you soon.";
+                })
+                .catch((error) => {
+                    console.error('Failed to send email', error);
+                    document.getElementById('form-status').textContent = "An error occurred. Please try again later.";
+                });
+        });
+    </script>
 </body>
 
 </html>
