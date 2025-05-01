@@ -1,21 +1,24 @@
-// Import the EmailJS library
-import emailjs from 'emailjs-com';
+import emailjs from "emailjs-com";
 
+window.onload = function () {
+    emailjs.init("desG5B5sH6mY5bCTj");
 
-// Replace 'YOUR_PUBLIC_KEY' with your actual Public Key
-emailjs.init('desG5B5sH6mY5bCTj');
+    const form = document.getElementById("contact-form");
 
-// Function to send email
-function sendEmail(event) {
-    event.preventDefault();
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-    emailjs.sendForm('service_fa43xnh', 'template_btd4e8a', event.target)
-        .then((result) => {
-            console.log('Email sent successfully:', result.status, result.text);
-        }, (error) => {
-            console.error('Error sending email:', error);
-        });
-}
-
-// Attach the function to the form submit event
-document.querySelector("form").addEventListener("submit", sendEmail);
+        emailjs.sendForm("service_fa43xnh", "template_btd4e8a", form)
+            .then((result) => {
+                console.log("Email sent successfully:", result.status, result.text);
+                document.getElementById("form-status").style.display = "block";
+                document.getElementById("form-status").textContent = "✅ Message sent successfully!";
+                form.reset();
+            })
+            .catch((error) => {
+                console.error("Error sending email:", error);
+                document.getElementById("form-status").style.display = "block";
+                document.getElementById("form-status").textContent = "❌ Failed to send. Please try again.";
+            });
+    });
+};

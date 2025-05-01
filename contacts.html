@@ -27,6 +27,242 @@
 					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
 		})(window, document, 'script', 'dataLayer', 'GTM-KQD2C5X5');</script>
 	<!-- End Google Tag Manager -->
+
+	<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background: #000000;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: auto;
+        }
+
+        .section-contact {
+            padding: 60px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 130vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 991px) {
+            .section-contact {
+                padding: 40px 0;
+            }
+        }
+
+        .section-contact .container {
+            max-width: 460px;
+            width: 100%;
+			
+            padding: 32px;
+            background: rgba(26, 26, 26, 0.26);
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+            opacity: 0.9;
+            margin: 0 20px;
+            border: 1px solid #333333;
+            backdrop-filter: blur(5px);
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 767px) {
+            .section-contact .container {
+                padding: 24px;
+                margin: 0 16px;
+            }
+        }
+
+        .section-contact .section-title {
+            font-size: 32px;
+            line-height: 40px;
+            color: #ffffff;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        @media (max-width: 767px) {
+            .section-contact .section-title {
+                font-size: 26px;
+                line-height: 34px;
+            }
+        }
+
+        .section-contact .section-subtitle {
+            font-size: 14px;
+            line-height: 22px;
+            color: #aaaaaa;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .section-contact .section-subtitle a {
+            color: #52e4e9;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .section-contact .section-subtitle a:hover {
+            color: #3dbcc1;
+            transform: translateX(4px);
+        }
+
+        .section-contact .section-subtitle svg {
+            width: 12px;
+            height: 12px;
+            stroke: #52e4e9;
+        }
+
+        .section-contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .form-group-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group-wrapper span {
+            font-size: 12px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .form-group-wrapper span small {
+            color: #ffd501;
+            font-size: 10px;
+            margin-left: 4px;
+        }
+
+        .form-group-wrapper .form-input,
+        .form-group-wrapper .form-textarea,
+        .form-group-wrapper select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #ffffff;
+            background: #222222;
+            transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .form-group-wrapper .form-input:focus,
+        .form-group-wrapper .form-textarea:focus,
+        .form-group-wrapper select:focus {
+            outline: none;
+            border-color: #fb81ff;
+            transform: translateY(-1px);
+            box-shadow: 0 0 6px rgba(251, 129, 255, 0.4);
+        }
+
+        .form-group-wrapper .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-group-wrapper select {
+            min-height: 44px;
+            appearance: none;
+            background: #222222 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23aaaaaa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") no-repeat right 16px center;
+            cursor: pointer;
+        }
+
+        @media (max-width: 767px) {
+            .form-group-wrapper .form-input,
+            .form-group-wrapper .form-textarea,
+            .form-group-wrapper select {
+                min-height: 40px;
+                font-size: 13px;
+            }
+            .form-group-wrapper .form-textarea {
+                min-height: 100px;
+            }
+        }
+
+        .form-status {
+            font-size: 13px;
+            color: #ffd501;
+			background-color: #222222;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .form-status.active {
+            display: block;
+        }
+
+        .btn {
+            background: #3e51ff;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            min-height: 46px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #2a3db2;
+            transform: scale(1.03);
+            box-shadow: 0 4px 12px rgba(62, 81, 255, 0.4);
+        }
+
+        .btn:active {
+            transform: scale(1);
+        }
+
+        @media (max-width: 767px) {
+            .btn {
+                min-height: 42px;
+                font-size: 14px;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: scale(1);
+            }
+            to {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+        }
+    </style>
 </head>
 
 <body style="overflow: hidden;" class="contacts-page">
@@ -69,7 +305,7 @@
 					<div class="header-wrapper__right">
 						<ul>
 							<li>
-								<a href="index.htm">Home</a>
+								<a href="index.html">Home</a>
 							</li>
 							<li>
 								<a href="gallery.html">Gallery</a>
@@ -78,15 +314,13 @@
 								<a href="about.html">About</a>
 							</li>
 						</ul>
-						<a href="contacts.html" class="header-top__contact">
-							<span>Contact</span>
-						</a>
-						<div class="lang">
-							<img src="images/lang-ico.svg" alt="">
-							<span>EN</span>
-							<div class="lang-menu">
-								<a href="ua/contacts.html">UA</a>
-							</div>
+						<div class="header-buttons">
+							<a href="contacts.html" class="header-top__contact">
+								<span>Contact</span>
+							</a>
+							<a href="https://wa.me/918433023265" class="whatsapp-button" target="_blank">
+								<span>Chat</span>
+							</a>
 						</div>
 					</div>
 					<div class="hamburger">
@@ -110,6 +344,8 @@
 			</div>
 		</div>
 	</header>
+	
+	
 	<nav class="mob-menu">
 		<ul>
 			<li>
@@ -125,130 +361,96 @@
 				<a href="contacts.html">Contacts</a>
 			</li>
 		</ul>
-		<div class="lang">
-			<img src="images/lang-ico.svg" alt="">
-			<ul>
-				<li>
-					<a href="javascript:void(0)" class="active">EN</a>
-				</li>
-				<li>
-					<a href="ua/contacts.html">UA</a>
-				</li>
-			</ul>
-		</div>
+		<a href="https://wa.me/918433023265" class="whatsapp-button" target="_blank">
+			<span>Chat on WhatsApp</span>
+		</a>
 	</nav>
 	<!-- START CONTENT -->
+	<div class="particles" id="particles-js"></div>
 	<section class="content">
 		<div class="section section-contact">
-			<div class="container">
-				<p class="section-title">Let's talk</p>
-				<span class="section-subtitle">
-					Do you have a project? Fill in the form or send us a
-					<a href="mailto:support@THE CRAFTSYNC.com">
-						direct email
-						<svg xmlns="http://www.w3.org/2000/svg" width="13.167" height="13.167"
-							viewbox="0 0 13.167 13.167">
-							<g id="Icon_feather-external-link" data-name="Icon feather-external-link"
-								transform="translate(-4 -3.793)">
-								<path id="Контур_19596" data-name="Контур 19596"
-									d="M14.466,13.651v3.986a1.329,1.329,0,0,1-1.329,1.329H5.829A1.329,1.329,0,0,1,4.5,17.637V10.329A1.329,1.329,0,0,1,5.829,9H9.815"
-									transform="translate(0 -2.507)" fill="none" stroke="#3e51ff" stroke-linecap="round"
-									stroke-linejoin="round" stroke-width="1"></path>
-								<path id="Контур_19597" data-name="Контур 19597" d="M22.5,4.5h3.986V8.486"
-									transform="translate(-10.027 0)" fill="none" stroke="#3e51ff" stroke-linecap="round"
-									stroke-linejoin="round" stroke-width="1"></path>
-								<path id="Контур_19598" data-name="Контур 19598" d="M15,11.809,22.309,4.5"
-									transform="translate(-5.849 0)" fill="none" stroke="#3e51ff" stroke-linecap="round"
-									stroke-linejoin="round" stroke-width="1"></path>
-							</g>
-						</svg>
-						.
-					</a>
-				</span>
-				<form id="contact-form" class="form">
-					<!-- Form fields go here as you've written them -->
-					<div class="form-group-wrapper">
-						<span>Name<small>*</small></span>
-						<div class="form-group">
-							<input type="text" class="form-input" name="name" placeholder="Marthin" required="">
-						</div>
-					</div>
-					<div class="form-group-wrapper">
-						<span>Surname</span>
-						<div class="form-group">
-							<input type="text" class="form-input" name="surname" placeholder="Elementil">
-						</div>
-					</div>
-					<div class="form-group-wrapper">
-						<span>Telegram or any messenger<small>*</small></span>
-						<div class="form-group">
-							<input type="text" class="form-input" name="tg" placeholder="@exemple" required="">
-						</div>
-					</div>
-					<div class="form-group-wrapper">
-						<span>E-mail</span>
-						<div class="form-group">
-							<input type="email" class="form-input" name="email" placeholder="exemple@gmail.com">
-						</div>
-					</div>
-					<div class="form-group-wrapper">
-						<span>Select Direction:</span>
-						<div class="form-group">
-							<select name="direction" required="">
-								<option value="">Direction</option>
-								<option value="UX/UI">UX/UI</option>
-								<option value="2D">2D</option>
-								<option value="3D">3D</option>
-								<option value="Front-end">Front-end</option>
-								<option value="Back-end">Back-end</option>
-								<option value="Full stack">Full stack</option>
-								<option value="Application">Application</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group-wrapper">
-						<span>What is the budget range for this project?</span>
-						<div class="form-group">
-							<select name="budget" required="">
-								<option value="">Budget</option>
-								<option value="Less than $5.000">Less than $5.000</option>
-								<option value="$5.000 - $10.000">$5.000 - $10.000</option>
-								<option value="$10.000 - $20.000">$10.000 - $20.000</option>
-								<option value="More than $20.000">More than $20.000</option>
-							</select>
-						</div>
-					</div>
-					<p class="form-status" id="form-status">Thank you! We will contact you soon.</p>
-					<button type="submit" class="btn">Submit</button>
-				</form>
-				
-			</div>
+		  <div class="container">
+			<p class="section-title">Connect Now</p>
+			<span class="section-subtitle">
+			  Got a project? Drop your info or hit us with an
+			  <a href="mailto:thecraftsync@gmail.com">
+				email
+				<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 13.167 13.167">
+				  <g transform="translate(-4 -3.793)">
+					<path d="M14.466,13.651v3.986a1.329,1.329,0,0,1-1.329,1.329H5.829A1.329,1.329,0,0,1,4.5,17.637V10.329A1.329,1.329,0,0,1,5.829,9H9.815" transform="translate(0 -2.507)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+					<path d="M22.5,4.5h3.986V8.486" transform="translate(-10.027 0)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+					<path d="M15,11.809,22.309,4.5" transform="translate(-5.849 0)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+				  </g>
+				</svg>
+			  </a>
+			</span>
+	  
+			<form id="contact-form" class="form">
+			  <div class="form-group-wrapper">
+				<span>Name <small>*</small></span>
+				<div class="form-group">
+				  <input type="text" class="form-input" name="name" placeholder="Your Name" required>
+				</div>
+			  </div>
+	  
+			  <div class="form-group-wrapper">
+				<span>Email</span>
+				<div class="form-group">
+				  <input type="email" class="form-input" name="email" placeholder="your.email@domain.com">
+				</div>
+			  </div>
+	  
+			  <div class="form-group-wrapper">
+				<span>Direction <small>*</small></span>
+				<div class="form-group">
+				  <textarea class="form-textarea" name="direction" placeholder="Describe your project direction" required rows="4"></textarea>
+				</div>
+			  </div>
+	  
+			  <div class="form-group-wrapper">
+				<span>Budget <small>*</small></span>
+				<div class="form-group">
+				  <select name="budget" required>
+					<option value="" disabled selected>Select Budget</option>
+					<option value="Less than $5,000"> $5,00-$1,000</option>
+					<option value="$5,000 - $10,000">$1,000 - $3,000</option>
+					<option value="$10,000 - $20,000">$3,000 - $5,000</option>
+					<option value="More than $20,000">More than $5,000</option>
+				  </select>
+				</div>
+			  </div>
+	  
+			  <p class="form-status" id="form-status" style="display: none;"></p>
+	  
+			  <button type="submit" class="btn">Send</button>
+			</form>
+		  </div>
 		</div>
-	</section>
+	  </section>
+	  
 	<!-- END CONTENT -->
 	<footer>
 		<div class="container">
+
 			<a href="#" class="logo">
-				<!-- <img src="images/footer-logo.svg" alt=""> -->
-
+				<img src="/images/mob-logo.svg" alt="CraftSync Logo" class="logo-image">
 				THE CRAFTSYNC
-
 			</a>
 			<div class="footer-nav">
-				<div class="footer-nav__item">
+				<div class="footer-nav__item anchor">
 					<p>Home</p>
 					<ul>
 						<li>
-							<a href="index.htm">Main</a>
+							<a href="#main">Main</a>
 						</li>
 						<li>
-							<a href="index.htm#skills">Skills</a>
+							<a href="#skills">Skills</a>
 						</li>
 						<li>
-							<a href="index.htm#products">Products</a>
+							<a href="#products">Products</a>
 						</li>
 						<li>
-							<a href="index.htm#process">Process</a>
+							<a href="#process">Process</a>
 						</li>
 					</ul>
 				</div>
@@ -286,67 +488,114 @@
 				<div class="footer-nav__item">
 					<p>Social Networks</p>
 					<ul>
+					
 						<li>
-							<a href="https://www.behance.net/vidclick" target="_blank">Behance</a>
-						</li>
-						<li>
-							<a href="https://www.instagram.com/THE CRAFTSYNC_creative_studio/"
+							<a href="https://www.instagram.com/thecraftsync?igsh=MTE3c2ozdzJyMmpqYQ=="
 								target="_blank">Instagram</a>
 						</li>
 						<!-- <li>
 								<a href="#" target="_blank">Twitter</a>
 							</li> -->
 						<li>
-							<a href="https://www.linkedin.com/in/THE CRAFTSYNC/" target="_blank">LindkedIn</a>
+							<a href="https://www.linkedin.com/company/the-craftsync/" target="_blank">LindkedIn</a>
 						</li>
 					</ul>
 				</div>
 			</div>
 			<div class="footer-bottom">
-				<p>Copyright © 2023 THE CRAFTSYNC. All rights reserved.</p>
+				<p>Copyright © 2023 The Craft Sync. All rights reserved.</p>
 				<span>
-					<img src="images/ukraine.svg" alt="">
-					Ukraine
+					INDIA
 				</span>
 			</div>
 		</div>
 	</footer>
+	
 	<script src="dist/main.js?v=07112023"></script>
 	<script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
-    <script type="text/javascript">
-        // Initialize EmailJS
-        emailjs.init('desG5B5sH6mY5bCTj'); // Replace with your actual EmailJS public key
+<script type="text/javascript">
+    // Initialize EmailJS
+    emailjs.init('desG5B5sH6mY5bCTj'); // Use your actual EmailJS public key
 
-        // Add event listener for form submission
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
+    // Add event listener for form submission
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
 
-            // Collect form data
-            const templateParams = {
-                name: document.querySelector('input[name="name"]').value,
-                surname: document.querySelector('input[name="surname"]').value,
-                tg: document.querySelector('input[name="tg"]').value,
-                email: document.querySelector('input[name="email"]').value,
-                direction: document.querySelector('select[name="direction"]').value,
-                budget: document.querySelector('select[name="budget"]').value
-            };
+        // Collect form data from the actual form
+        const templateParams = {
+            name: document.querySelector('input[name="name"]').value,
+            email: document.querySelector('input[name="email"]').value,
+            direction: document.querySelector('textarea[name="direction"]').value,
+            budget: document.querySelector('select[name="budget"]').value
+        };
 
-			console.log('Form data:', templateParams); // Log the form data to the console
+        console.log('Form data:', templateParams); // Debug log
 
-            // Send form data via EmailJS
-            emailjs.send('service_fa43xnh', 'template_btd4e8a', templateParams)
-                .then((response) => {
-                    console.log('Email sent successfully!', response.status, response.text);
-                    document.getElementById('form-status').textContent = "Thank you! We will contact you soon.";
-                })
-                .catch((error) => {
-                    console.error('Failed to send email', error);
-                    document.getElementById('form-status').textContent = "An error occurred. Please try again later.";
-                });
-        });
-    </script>
+        // Send form data via EmailJS
+        emailjs.send('service_fa43xnh', 'template_btd4e8a', templateParams)
+            .then((response) => {
+                console.log('Email sent successfully!', response.status, response.text);
+                document.getElementById('form-status').style.display = "block";
+                document.getElementById('form-status').textContent = "✅ Thank you! We will contact you soon.";
+                document.getElementById('contact-form').reset();
+            })
+            .catch((error) => {
+                console.error('Failed to send email', error);
+                document.getElementById('form-status').style.display = "block";
+                document.getElementById('form-status').textContent = "❌ An error occurred. Please try again later.";
+            });
+    });
+</script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+		<script>
+			// Initialize particles.js
+			try {
+				particlesJS("particles-js", {
+					particles: {
+						number: { value: 60, density: { enable: true, value_area: 800 } },
+						color: { value: "#ffffff" },
+						shape: { type: "circle" },
+						opacity: { value: 0.5, random: true },
+						size: { value: 3, random: true },
+						line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+						move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
+					},
+					interactivity: {
+						detect_on: "canvas",
+						events: { onhover: { enable: true, mode: "bubble" }, onclick: { enable: true, mode: "push" } },
+						modes: { bubble: { distance: 200, size: 6, duration: 2, opacity: 0.8, speed: 3 }, push: { particles_nb: 4 } }
+					},
+					retina_detect: true
+				});
+				console.log("Particles.js initialized successfully");
+			} catch (error) {
+				console.error("Error initializing particles.js:", error);
+			}
+	
+			// Form submission handling
+			document.getElementById('contact-form').addEventListener('submit', (e) => {
+				e.preventDefault();
+				const form = e.target;
+				if (form.checkValidity()) {
+					document.querySelector('.container').style.animation = 'fadeOut 1s ease-in-out forwards';
+					setTimeout(() => {
+						document.getElementById('form-status').classList.add('active');
+						form.reset();
+						// Reset animation to allow resubmission
+						setTimeout(() => {
+							document.querySelector('.container').style.animation = '';
+							document.getElementById('form-status').classList.remove('active');
+						}, 2000);
+					}, 1000);
+				} else {
+					form.reportValidity();
+				}
+			});
+		</script>
+
 </body>
 
 </html>
