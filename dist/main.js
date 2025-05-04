@@ -248,40 +248,44 @@
       },
       111: (t, e, r) => {
         r.d(e, { O: () => n });
-        document.getElementById('contact-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const form = e.target;
-            const status = document.getElementById('form-status');
-            if (form.checkValidity()) {
-                document.querySelector('.container').style.animation = 'fadeOut 1s ease-in-out forwards';
-                try {
-                    const response = await fetch(form.action, {
-                        method: form.method,
-                        body: new FormData(form),
-                        headers: { Accept: "text/plain" }
-                    });
-                    const text = await response.text();
-                    status.textContent = text;
-                    status.classList.add('active');
-                    if (response.ok) {
-                        form.reset();
-                    }
-                    setTimeout(() => {
-                        document.querySelector('.container').style.animation = '';
-                        status.classList.remove('active');
-                    }, 3000);
-                } catch (error) {
-                    status.textContent = "Oops! There was a problem submitting your form";
-                    status.classList.add('active');
-                    setTimeout(() => {
-                        document.querySelector('.container').style.animation = '';
-                        status.classList.remove('active');
-                    }, 3000);
-                }
-            } else {
-                form.reportValidity();
+        const n = () => {
+          var t = document.querySelector("form");
+          if (t) {
+            async function e(e) {
+              e.preventDefault();
+              var r = document.querySelector(".form-status"),
+                n = new FormData(e.target);
+              fetch(e.target.action, {
+                method: t.method,
+                body: n,
+                headers: { Accept: "application/json" },
+              })
+                .then((e) => {
+                  e.ok
+                    ? ((r.style.height = "43px"),
+                      setTimeout(() => (r.style.height = "0px"), 3e3),
+                      t.reset())
+                    : e.json().then((t) => {
+                        Object.hasOwn(t, "errors")
+                          ? (r.innerHTML = t.errors
+                              .map((t) => t.message)
+                              .join(", "))
+                          : ((r.innerHTML =
+                              "Oops! There was a problem submitting your form"),
+                            (r.style.height = "43px"),
+                            setTimeout(() => (r.style.height = "0px"), 3e3));
+                      });
+                })
+                .catch((t) => {
+                  (r.innerHTML =
+                    "Oops! There was a problem submitting your form"),
+                    (r.style.height = "43px"),
+                    setTimeout(() => (r.style.height = "0px"), 3e3);
+                });
             }
-        });
+            t.addEventListener("submit", e);
+          }
+        };
       },
       675: (t, e, r) => {
         r.d(e, { P: () => n });
@@ -307,7 +311,7 @@
           }, 2e3),
             setTimeout(() => {
               (t.style.overflow = "initial"), e.remove(), (0, n.X)();
-            }, 500);
+            }, 2500);
         };
       },
       330: (t, e, r) => {
@@ -11186,3 +11190,34 @@
     r(959),
     r(398);
 })();
+document.addEventListener('DOMContentLoaded', () => {
+  const carousel = document.querySelector('.brands-carousel');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  carousel.addEventListener('mousedown', (e) => {
+      isDown = true;
+      carousel.classList.add('active');
+      startX = e.pageX - carousel.offsetLeft;
+      scrollLeft = carousel.scrollLeft;
+  });
+
+  carousel.addEventListener('mouseleave', () => {
+      isDown = false;
+      carousel.classList.remove('active');
+  });
+
+  carousel.addEventListener('mouseup', () => {
+      isDown = false;
+      carousel.classList.remove('active');
+  });
+
+  carousel.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - carousel.offsetLeft;
+      const walk = (x - startX) * 2; // Scroll speed
+      carousel.scrollLeft = scrollLeft - walk;
+  });
+});
