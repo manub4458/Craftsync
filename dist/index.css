@@ -1116,7 +1116,7 @@ h1 {
     font-size: 12px;
     line-height: 0px;
     padding: 20px 0;
-    width: 90px;
+    width: 110px;
   }
 }
 .section-design .function .bg {
@@ -3178,28 +3178,41 @@ html.pause body {
   background-color: white;
   text-align: center;
   position: relative;
-    z-index: 1;
+  z-index: 1;
 }
 
 .section-brands .section-title {
-  font-size: 44px;
-  font-weight:bolder;
+  font-size: 60px;
+  font-weight: bolder;
   font-family: "SF Pro Bold";
   margin-bottom: 30px;
+  color: #000;
+  background: linear-gradient(90deg, 
+  #2d4fff,  /* Blue */
+  #ff619f,  /* Pink */
+  #2d4fff,  /* Light pink */
+  #7b4b94,  /* Purple */
+  #ff794a,  /* Orange */
+  #96b8f5,  /* Light blue */
+  #53e3f2   /* Cyan */
+);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+color: transparent;
 }
 
 .brands-carousel {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  overflow-x: auto;
-  padding: 10px 0;
+  gap: 20px; /* Space between images */
+  overflow: hidden; /* Hide overflowing content */
+  position: relative;
+  white-space: nowrap; /* Prevent wrapping of items */
 }
 
 .brand-item {
-  flex: 0 0 auto;
-  width: 150px;
+  flex: 0 0 auto; /* Prevent shrinking and allow horizontal scrolling */
+  width: 150px; /* Adjust width of each brand item */
   height: auto;
   display: flex;
   justify-content: center;
@@ -3209,40 +3222,52 @@ html.pause body {
 .brand-item img {
   max-width: 100%;
   height: auto;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
 }
 
 .brand-item img:hover {
-  filter: grayscale(0%);
-}
-.section-why::after,
-.section-brands::after {
-    content: "";
-    display: block;
-    clear: both;
-}
-/* Responsive styles for smaller screens */
-@media (max-width: 1024px) {
-  .brand-item {
-      flex: 0 1 calc(25% - 20px); /* 4 items per row */
-  }
+scale: 1.05; /* Slightly enlarge on hover */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
 }
 
+/* Responsive styles for smaller screens */
 @media (max-width: 768px) {
+  .brands-carousel {
+    justify-content: flex-start; /* Align items to the left */
+    overflow-x: auto; /* Ensure horizontal scrolling */
+    white-space: nowrap; /* Prevent wrapping of items */
+  }
+
   .brand-item {
-      flex: 0 1 calc(33.33% - 20px); /* 3 items per row */
+    flex: 0 0 calc(33.33% - 10px); /* Show 3 items at a time */
+    width: calc(33.33% - 10px); /* Adjust width for 3 items */
+
+  }
+
+  .brand-item img {
+    max-width: 90%; /* Slightly larger images for mobile */
+    height: auto;
   }
 }
 
 @media (max-width: 480px) {
-  .brand-item {
-      flex: 0 1 calc(50% - 20px); /* 2 items per row */
+  .brands-carousel {
+    justify-content: flex-start;
+    gap: 40px; /* Reduce gap for smaller screens */
+    overflow-x: auto;
+    white-space: nowrap; /* Prevent wrapping of items */
   }
-}
-@media (max-width: 320px) {
+  .section-brands .section-title {
+    font-size: 32px;
+    font-weight: bolder; /* Adjust title size for smaller screens */
+  }
   .brand-item {
-      flex: 0 1 100%; /* 1 item per row */
-      max-width: 250px; /* Max size for very small screens */
+    flex: 0 0 calc(15% - 10px); /* Show 2 items at a time */
+    width: calc(10% - 10px);
+    color: black; /* Adjust width for 2 items */
+  }
+
+  .brand-item img {
+    max-width: 100%; /* Ensure images fit their container */
+    height: auto;
   }
 }
