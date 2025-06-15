@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Icon -->
+  <rect x="0" y="10" width="40" height="40" rx="8" fill="url(#logoGradient)"/>
+  <text x="20" y="36" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">C</text>
+  
+  <!-- Text -->
+  <text x="55" y="25" fill="#f8fafc" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Craft</text>
+  <text x="55" y="45" fill="url(#logoGradient)" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Sync</text>
+</svg>
