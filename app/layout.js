@@ -1,9 +1,6 @@
-
 import Footer from "./components/footer";
 import Header from "./components/header";
 import "./globals.css";
-
-
 
 export const metadata = {
   title: "TheCraftsync - Digital Agency",
