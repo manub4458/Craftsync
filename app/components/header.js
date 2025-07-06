@@ -15,15 +15,13 @@ const Header = () => {
   return (
     <header className=" font-heading fixed w-full z-50 bg-transparent px-2 sm:px-10">
       <div className="flex justify-between items-center p-4">
-        <Link href="/">
         <img
           src="/logo.png"
           alt="Oliver Jeffers Logo"
           className="h-10 w-auto sm:h-12 md:h-14"
           loading="lazy"
           decoding="async"
-          />
-          </Link>
+        />
         <button
           onClick={() => setIsOpen(true)}
           className="text-white text-2xl font-bold focus:outline-none sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-4xl"
