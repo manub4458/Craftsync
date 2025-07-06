@@ -1,9 +1,7 @@
 import Link from 'next/link';
 
 export default function Footer() {
-  console.log("hello");
   return (
-
     <footer className="bg-[#1A1A1A] text-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
