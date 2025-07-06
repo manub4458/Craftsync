@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'HeadingExtrabold';
+  src: url('/fonts/HeadingExtrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HeadingBold';
+  src: url('/fonts/HeadingBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('/fonts/proxima.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --font-display: 'HeadingExtrabold', sans-serif;
+  --font-heading: 'HeadingBold', sans-serif;
+  --font-paragraph: 'ProximaNova', sans-serif;
+    --primary: #D2BEDD;
+  --primary-dark: #7D4199;
+}
+.font-display {
+  font-family: var(--font-display);
+}
+.font-heading {
+  font-family: var(--font-heading);
+}
+.font-paragraph {
+  font-family: var(--font-paragraph);
+}
+.text-primary {
+  color: var(--primary);
+}
+.text-primary-dark {
+  color: var(--primary-dark);
+}
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+
+.word-wide {
+  
+  word-spacing: 100vw;
+  line-height: 0.88 ;
+}
+.word-subheading {
+  line-height: 0.88 ;
+}
+
+@keyframes waveUnderline {
+  0% { transform: scaleX(1) translateX(0); }
+  50% { transform: scaleX(1.1) translateX(5%); }
+  100% { transform: scaleX(1) translateX(0); }
+}
+p{
+  font-family: var(--font-paragraph);
+
+}
