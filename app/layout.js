@@ -1,7 +1,10 @@
+import { Route } from "lucide-react";
 
 import Footer from "./components/footer";
 import Header from "./components/header";
 import "./globals.css";
+import RouteLoader from "./components/routeloader";
+import ContactOverlay from './components/letstalk';
 
 
 
@@ -21,6 +24,9 @@ export default function RootLayout({ children }) {
       <body
       
       >
+        
+      <RouteLoader />
+      <ContactOverlay />
         <Header />
         {children}
         <Footer />

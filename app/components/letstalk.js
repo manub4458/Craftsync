@@ -172,7 +172,7 @@ const ContactOverlay = () => {
       {/* Main Contact Button */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className="font-display text-primary-dark fixed -right-8 -rotate-90 top-1/2 transform -translate-y-1/2 z-40 px-6 py-2 rounded-lg font-bold text-black shadow-lg overflow-hidden"
+        className="font-display text-primary-dark fixed -right-8 -rotate-90 top-1/2 transform -translate-y-1/2 z-50 px-6 py-2 rounded-lg font-bold text-black shadow-lg overflow-hidden"
         style={{ backgroundColor: '#D2BEDD' }}
         variants={buttonVariants}
         whileHover="hover"
@@ -183,8 +183,9 @@ const ContactOverlay = () => {
           delay: 0.5, 
           type: 'spring',
         }}
-      >
-        <motion.span className="text-lg relative z-10">
+
+        <motion.span className="text-lg relative z-50">
+
           Let &apos;s Talk
         </motion.span>
       </motion.button>
@@ -230,7 +231,7 @@ const ContactOverlay = () => {
                   <div className="grid lg:grid-cols-2 gap-12 items-start">
                     {/* Left Side - Contact Info */}
                     <motion.div 
-                      className="space-y-8" 
+                      className=" space-y-4 sm:space-y-8" 
                       variants={contentVariants}
                       initial="hidden"
                       animate="visible"
@@ -242,8 +243,11 @@ const ContactOverlay = () => {
                         transition={{ delay: 0.2, type: 'spring' }}
                       >
                         <h2 className="text-sm font-bold text-black mb-2 tracking-wider">CONTACT</h2>
-                        <h1 className="font-display text-5xl lg:text-6xl font-black uppercase text-black leading-tight">
-                          Let &apos; s make <br />
+
+                        <h1 className="font-display text-5xl lg:text-6xl font-black uppercase text-black ">
+                          Let's make <br />
+
+
                           it happen{' '}
                           <motion.span 
                             className="inline-block w-12 h-12 border-2 border-black rounded-full relative overflow-hidden"
@@ -267,7 +271,7 @@ const ContactOverlay = () => {
                       </motion.p>
 
                       <motion.div 
-                        className="space-y-6"
+                        className="space-y-3"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4 }}         
