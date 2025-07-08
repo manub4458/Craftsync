@@ -13,7 +13,7 @@ const Header = () => {
   };
 
   return (
-    <header className=" font-heading fixed w-full z-50 bg-transparent px-2 sm:px-10">
+    <header className=" font-heading fixed w-full z-30 bg-transparent px-2 sm:px-10">
       <div className="flex justify-between items-center p-4">
         <Link href="/">
         <img
@@ -34,7 +34,7 @@ const Header = () => {
 <AnimatePresence>
   {isOpen && (
     <motion.div
-      className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-between p-6 sm:p-8"
+      className="fixed inset-0 bg-white z-30 flex flex-col items-center justify-between p-6 sm:p-8"
       variants={overlayVariants}
       initial="hidden"
       animate="visible"
@@ -63,7 +63,7 @@ const Header = () => {
       </div>
       <nav className="flex flex-col items-center space-y-6 text-black text-5xl gap-6 sm:text-7xl">
         <Link href="/home" className="hover:text-gray-900 hover:scale-105 transition-transform duration-200 relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-black after:top-0 after:left-0 after:transform after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left before:content-[''] before:absolute before:w-full before:h-0.5 before:bg-black before:bottom-0 before:left-0 before:transform before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-300 before:origin-left">Home</Link>
-        <Link href="/about" className="hover:text-gray-900 hover:scale-105 transition-transform duration-200 relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-black after:top-0 after:left-0 after:transform after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left before:content-[''] before:absolute before:w-full before:h-0.5 before:bg-black before:bottom-0 before:left-0 before:transform before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-300 before:origin-left">About Us</Link>
+        <Link href="/about-us" className="hover:text-gray-900 hover:scale-105 transition-transform duration-200 relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-black after:top-0 after:left-0 after:transform after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left before:content-[''] before:absolute before:w-full before:h-0.5 before:bg-black before:bottom-0 before:left-0 before:transform before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-300 before:origin-left">About Us</Link>
         <Link href="/contact" className="hover:text-gray-900 hover:scale-105 transition-transform duration-200 relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-black after:top-0 after:left-0 after:transform after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left before:content-[''] before:absolute before:w-full before:h-0.5 before:bg-black before:bottom-0 before:left-0 before:transform before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-300 before:origin-left">Contact Us</Link>
         <Link href="/services" className="hover:text-gray-900 hover:scale-105 transition-transform duration-200 relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-black after:top-0 after:left-0 after:transform after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left before:content-[''] before:absolute before:w-full before:h-0.5 before:bg-black before:bottom-0 before:left-0 before:transform before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-300 before:origin-left">Our Services</Link>
       </nav>

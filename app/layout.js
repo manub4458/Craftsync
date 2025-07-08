@@ -1,6 +1,10 @@
+import { Route } from "lucide-react";
+import AnimatedLoader from "./components/AnimatedLoader";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import "./globals.css";
+import RouteLoader from "./components/routeloader";
+import ContactOverlay from './components/letstalk';
 
 export const metadata = {
   title: "TheCraftsync - Digital Agency",
@@ -18,6 +22,9 @@ export default function RootLayout({ children }) {
       <body
       
       >
+        
+      <RouteLoader />
+      <ContactOverlay />
         <Header />
         {children}
         <Footer />

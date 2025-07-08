@@ -129,12 +129,12 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#111] p-8 lg:p-12">
+    <div className="min-h-screen bg-[#111]  pt-20 p-8 lg:p-12 ">
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Contact Info */}
           <motion.div 
-            className="space-y-8" 
+            className=" space-y-4 sm:space-y-8" 
             variants={contentVariants}
             initial="hidden"
             animate="visible"

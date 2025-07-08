@@ -44,7 +44,7 @@ Enthusiastic, motivated, and ready to exceed expectations, we deliver skill and 
               </div>
               <h2 className="text-2xl font-heading text-white uppercase mb-3">Driven by outcomes</h2>
               <p className="text-white font-paragraph group-hover:text-gray-200 transition-colors duration-300">
-               We craft performance-focused websites tailored to your organization’s goals and strategic vision.
+               We craft performance focused websites tailored to your organization’s goals and strategic vision.
               </p>
               <div className="mt-6">
                    <span className="inline-block w-8 h-1 bg-[#D2BEDD] group-hover:w-12 transition-all duration-300"></span>

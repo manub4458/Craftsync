@@ -8,16 +8,16 @@ const DigitalPartnerSection = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Text content - left side */}
           <div className="lg:w-1/2">
-            <h2 className="text-5xl sm:text-8xl md:text-8xl lg:text-7xl xl:text-7xl 2xl:text-[5rem]  font-heading text-white mb-6">
+            <h2 className="text-5xl sm:text-8xl md:text-8xl lg:text-7xl xl:text-7xl 2xl:text-[5rem] text-center sm:text-center md:text-left   font-heading text-white mb-6">
               <span className="block">YOUR RELIABLE</span>
               <span className=""> DIGITAL ALLY</span>
             </h2>
             
-            <p className="text-lg font-paragraph text-gray-200 mb-6">
+            <p className="text-lg font-paragraph text-center sm:text-left text-gray-200 mb-6">
             We are a premier digital agency based in Haridwar, Uttarakhand, India, supporting businesses across the region, India, and globally. At TheCraftsync, we are committed to providing outstanding web design, website development, and digital marketing services customized to your specific requirements.
             </p>
             
-            <p className="text-lg text-gray-200 font-paragraph">
+            <p className="text-lg text-gray-200 text-center sm:text-left font-paragraph">
 Since 2020, we’ve earned a legacy of distinction, revolutionizing worldwide brands with cutting-edge digital approaches. At TheCraftsync, we excel in crafting visually captivating websites, data-informed marketing, and adaptable development solutions.            </p>
           </div>
 
