@@ -144,7 +144,7 @@ const ContactOverlay = () => {
                   <div className="space-y-4 sm:space-y-8">
                     <h2 className="text-sm font-bold text-black mb-2">CONTACT</h2>
                     <h1 className="font-display text-5xl lg:text-6xl font-black uppercase text-black">
-                      Let's make <br /> it happen{' '}
+                      Let&apos;s make <br /> it happen{' '}
                       <motion.span className="inline-block w-12 h-12 border-2 border-black rounded-full relative overflow-hidden">
                         <img src="/float.png" alt="Rotating icon" className="absolute inset-0 w-full h-full object-cover rounded-full" />
                       </motion.span>
