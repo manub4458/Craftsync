@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 import { Route } from "lucide-react";
-import AnimatedLoader from "./components/AnimatedLoader";
-=======
 
->>>>>>> ab325ea9139e231b3fc5a22e631f198edc5b1150
 import Footer from "./components/footer";
 import Header from "./components/header";
 import "./globals.css";
