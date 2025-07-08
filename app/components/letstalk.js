@@ -184,7 +184,11 @@ const ContactOverlay = () => {
           type: 'spring',
         }}
       >
+<<<<<<< HEAD
         <motion.span className="text-lg relative z-50">
+=======
+        <motion.span className="text-lg relative z-10">
+>>>>>>> ab325ea9139e231b3fc5a22e631f198edc5b1150
           Let's Talk
         </motion.span>
       </motion.button>
@@ -242,7 +246,11 @@ const ContactOverlay = () => {
                         transition={{ delay: 0.2, type: 'spring' }}
                       >
                         <h2 className="text-sm font-bold text-black mb-2 tracking-wider">CONTACT</h2>
+<<<<<<< HEAD
                         <h1 className="font-display text-5xl lg:text-6xl font-black uppercase text-black ">
+=======
+                        <h1 className="font-display text-5xl lg:text-6xl font-black uppercase text-black leading-tight">
+>>>>>>> ab325ea9139e231b3fc5a22e631f198edc5b1150
                           Let's make <br />
                           it happen{' '}
                           <motion.span 
