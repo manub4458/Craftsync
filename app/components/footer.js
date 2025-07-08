@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="space-y-6 ">
             <div className="flex items-center gap-2">
               <h2 className="text-5xl sm:text-3xl md:text-4xl lg:text-6xl word-wide font-display font-bold">
-                LET'S WORK TOGETHER
+                LET&apos;S WORK TOGETHER
                 <img src="/love.png" loading='lazy' alt="smile" className=" hover:rotate-6 w-10 h-10 sm:w-10 sm:h-10 md:w-12 md:h-12 inline-block ml-2" />
               </h2>
             </div>
@@ -38,7 +38,7 @@ export default function Footer() {
       />
     </div>
 
-    LET'S TALK
+    LET&apos;S TALK
   </button>
   </Link>
 </div>

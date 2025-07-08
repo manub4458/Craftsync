@@ -185,7 +185,7 @@ const ContactOverlay = () => {
         }}
       >
         <motion.span className="text-lg relative z-50">
-          Let's Talk
+          Let &apos;s Talk
         </motion.span>
       </motion.button>
 
