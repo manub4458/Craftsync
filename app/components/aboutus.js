@@ -1,6 +1,5 @@
 'use client';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 const DigitalPartnerSection = () => {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#111]">
@@ -24,13 +23,26 @@ Since 2020, we’ve earned a legacy of distinction, revolutionizing worldwide br
           {/* Image - right side */}
           <div className="lg:w-1/2">
             <div className="relative rounded-xl overflow-hidden shadow-lg aspect-w-16 aspect-h-9">
-<Image
-  src="/img.jpg"
-  alt="Digital agency team"
-  width={800}
-  height={500}
-  className="object-cover w-full h-full"
-/>
+            <img
+      src="/img.jpg" // Replace with your actual image
+      alt="Digital agency team working on innovative projects"
+      className="object-cover w-full h-full"
+      loading="lazy" // Lazy loading for performance
+      decoding="async" // Async decoding
+      width="800"
+      height="500"
+      onError={(e) => {
+        e.target.style.display = 'none'; // Hide if image fails to load
+        console.warn('Image failed to load:', e.target.src);
+      }}
+      onLoad={(e) => {
+        e.target.style.opacity = '1'; // Fade in effect
+      }}
+      style={{
+        opacity: 0,
+        transition: 'opacity 0.3s ease'
+      }}
+    />
             </div>
           </div>
         </div>

@@ -147,7 +147,7 @@ const ContactPage = () => {
             >
               <h2 className="text-sm font-bold text-white mb-2 tracking-wider">CONTACT</h2>
               <h1 className="font-display text-5xl lg:text-6xl font-black uppercase text-white leading-tight">
-                Let's make <br />
+                Let &apos; s make <br />
                 it happen{' '}
                 <span className="inline-block w-12 h-12 border-2 border-white rounded-full relative overflow-hidden">
                   <img
