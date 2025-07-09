@@ -128,7 +128,7 @@ We’re more than just experts—we’re collaborators, problem-solvers, and cre
               <h3 className="text-2xl font-semibold text-[#E0E0E0] font-heading mb-2">Aryan</h3>
               <p className="text-lg text-[#7D4199] mb-4">Full-Stak Developer</p>
               <p className="text-sm text-gray-400 leading-relaxed">
-               Aryan's full-stack expertise powers seamless digital experiences from front to back. With a sharp eye for design and solid backend logic, he builds fast, scalable, and user-focused web solutions.
+               Aryan &apos;s full-stack expertise powers seamless digital experiences from front to back. With a sharp eye for design and solid backend logic, he builds fast, scalable, and user-focused web solutions.
               </p>
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-[#7D4199]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
