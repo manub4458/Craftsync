@@ -2,6 +2,10 @@
 import React from 'react'
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import InifiniteScroller from '../components/infinitetext'; // Adjust the import path as necessary
+import HeroSection from './component1';
+import TeamSection from './team';
+import WhatMakesUsDifferent from './whyus2';
 const Aboutus = () => {
 
     // Text animation variants
@@ -37,6 +41,8 @@ const Aboutus = () => {
     }
   };
   return (
+    <>
+
     <div className="bg-[#111] mx-auto px-4 sm:px-6 lg:px-8 py-20 flex items-center justify-center">
       <div className="w-full max-w-7xl text-center">
         <motion.div
@@ -74,8 +80,12 @@ const Aboutus = () => {
           >
 Our passionate digital marketing team — who we are, what drives us, and the impact we create.          </motion.p>
       </div>
-      
     </div>
+    <WhatMakesUsDifferent />
+    <HeroSection />
+    <InifiniteScroller />
+    <TeamSection />
+        </>
   )
 }
 
