@@ -44,7 +44,7 @@ export default function WhatMakesUsDifferent() {
   animate="animate"
   className="font-heading pt-1 md:pt-10  word-subheading uppercase text-5xl sm:text-8xl md:text-8xl lg:text-7xl xl:text-7xl 2xl:text-[6rem] mb-6 text-center"
 >
-  <span className="text-white">Why We're      <motion.img
+  <span className="text-white">Why We &apos; re      <motion.img
       src="58621.png" // Replace with your image URL
       alt="transform icon"
       className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 inline-block rotate-16"
