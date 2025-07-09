@@ -128,15 +128,60 @@ const ContactOverlay = () => {
               background: 'linear-gradient(135deg, #D2BEDD 0%, #E8D5E8 50%, #F0E6F0 100%)',
             }}
           >
-            <motion.div className="min-h-screen p-8 lg:p-12 relative">
-              <motion.button
-                onClick={() => setIsOpen(false)}
-                className="absolute top-6 right-6 p-3 rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <X size={24} color="black" />
-              </motion.button>
+
+            <motion.div
+              className="w-full h-full overflow-y-auto"
+              variants={contentVariants}
+            >
+              <div className="min-h-screen p-8 lg:p-12 relative">
+                {/* Close Button */}
+                <motion.button
+                  onClick={() => setIsOpen(false)}
+                  className="absolute top-6 right-6 p-3 rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition-all duration-300 backdrop-blur-sm"
+                  whileHover={{ 
+                    scale: 1.1, 
+                    rotate: 90,
+                    backgroundColor: 'rgba(255,255,255,0.4)' 
+                  }}
+                  whileTap={{ scale: 0.9 }}
+                  initial={{ opacity: 0, rotate: -90 }}
+                  animate={{ opacity: 1, rotate: 0 }}
+                  transition={{ delay: 0.01 }}
+                >
+                  <X size={24} color="black" />
+                </motion.button>
+
+                <div className="max-w-6xl mx-auto">
+                  <div className="grid lg:grid-cols-2 gap-12 items-start">
+                    {/* Left Side - Contact Info */}
+                    <motion.div 
+                      className=" space-y-4 sm:space-y-8" 
+                      variants={contentVariants}
+                      initial="hidden"
+                      animate="visible"
+                      transition={{ delay: 0.1 }}
+                    >
+                      <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.2, type: 'spring' }}
+                      >
+                        <h2 className="text-sm font-bold text-black mb-2 tracking-wider">CONTACT</h2>
+                        <h1 className="font-display text-5xl lg:text-6xl font-black uppercase text-black ">
+                          Let&apos;s make <br />
+                          it happen{' '}
+                          <motion.span 
+                            className="inline-block w-12 h-12 border-2 border-black rounded-full relative overflow-hidden"
+                          >
+                            <img
+                              src="/float.png"
+                              alt="Rotating icon"
+                              className="absolute inset-0 w-full h-full object-cover rounded-full"
+                            />
+                          </motion.span>
+                        </h1>
+                      </motion.div>
+
 
               <div className="max-w-6xl mx-auto">
                 <div className="grid lg:grid-cols-2 gap-12 items-start">
