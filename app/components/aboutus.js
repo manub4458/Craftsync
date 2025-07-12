@@ -31,17 +31,7 @@ Since 2020, we’ve earned a legacy of distinction, revolutionizing worldwide br
       decoding="async" // Async decoding
       width="800"
       height="500"
-      onError={(e) => {
-        e.target.style.display = 'none'; // Hide if image fails to load
-        console.warn('Image failed to load:', e.target.src);
-      }}
-      onLoad={(e) => {
-        e.target.style.opacity = '1'; // Fade in effect
-      }}
-      style={{
-        opacity: 0,
-        transition: 'opacity 0.3s ease'
-      }}
+
     />
             </div>
           </div>
