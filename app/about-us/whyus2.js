@@ -44,7 +44,9 @@ export default function WhatMakesUsDifferent() {
   animate="animate"
   className="font-heading pt-1 md:pt-10  word-subheading uppercase text-5xl sm:text-8xl md:text-8xl lg:text-7xl xl:text-7xl 2xl:text-[6rem] mb-6 text-center"
 >
-  <span className="text-white">Why We &apos; re      <motion.img
+
+  <span className="text-white">Why We&apos;re      <motion.img
+
       src="58621.png" // Replace with your image URL
       alt="transform icon"
       className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 inline-block rotate-16"
@@ -78,7 +80,7 @@ We focus on precision, honor our commitments, and strive to exceed expectations,
           {/* Real-World Mastery */}
           <div className="flex items-center p-6 bg-[#1A1A1A] rounded-xl shadow-lg hover:bg-[#2A2A2A] transition-all duration-300">
             <div className="mr-4 flex-shrink-0">
-              <div className="w-12 h-12 bg-[#D2BEDD] rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-[#FE7743] rounded-lg flex items-center justify-center">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
@@ -87,7 +89,7 @@ We focus on precision, honor our commitments, and strive to exceed expectations,
             <div>
               <h3 className="font-heading uppercase word-subheading text-xl font-semibold text-[#E0E0E0] mb-2">Real-World Mastery</h3>
               <p className="text-sm text-gray-400">
-                3+ years of experience, a portfolio full of successful projects, and industry-recognised achievements—our process works, and so do we.
+                5+ years of experience, a portfolio full of successful projects, and industry-recognised achievements—our process works, and so do we.
               </p>
             </div>
           </div>
@@ -95,7 +97,7 @@ We focus on precision, honor our commitments, and strive to exceed expectations,
           {/* Focused Execution */}
           <div className="flex items-center p-6 bg-[#1A1A1A] rounded-xl shadow-lg hover:bg-[#2A2A2A] transition-all duration-300">
             <div className="mr-4 flex-shrink-0">
-              <div className="w-12 h-12 bg-[#D2BEDD] rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-[#FE7743] rounded-lg flex items-center justify-center">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
@@ -112,7 +114,7 @@ We focus on precision, honor our commitments, and strive to exceed expectations,
           {/* Speed Meets Strategy*/}
           <div className="flex items-center p-6 bg-[#1A1A1A] rounded-xl shadow-lg hover:bg-[#2A2A2A] transition-all duration-300">
             <div className="mr-4 flex-shrink-0">
-              <div className="w-12 h-12 bg-[#D2BEDD] rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-[#FE7743] rounded-lg flex items-center justify-center">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
@@ -129,7 +131,7 @@ We focus on precision, honor our commitments, and strive to exceed expectations,
           {/* >We Imagine. We Craft. We Expand. */}
           <div className="flex items-center p-6 bg-[#1A1A1A] rounded-xl shadow-lg hover:bg-[#2A2A2A] transition-all duration-300">
             <div className="mr-4 flex-shrink-0">
-              <div className="w-12 h-12 bg-[#D2BEDD] rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-[#FE7743] rounded-lg flex items-center justify-center">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
@@ -146,7 +148,7 @@ We focus on precision, honor our commitments, and strive to exceed expectations,
           {/* All Action. No Nonsense. */}
           <div className="flex items-center p-6 bg-[#1A1A1A] rounded-xl shadow-lg hover:bg-[#2A2A2A] transition-all duration-300">
             <div className="mr-4 flex-shrink-0">
-              <div className="w-12 h-12 bg-[#D2BEDD] rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-[#FE7743] rounded-lg flex items-center justify-center">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
@@ -163,7 +165,7 @@ We focus on precision, honor our commitments, and strive to exceed expectations,
           {/* Digital Done Right, For You */}
           <div className="flex items-center p-6 bg-[#1A1A1A] rounded-xl shadow-lg hover:bg-[#2A2A2A] transition-all duration-300">
             <div className="mr-4 flex-shrink-0">
-              <div className="w-12 h-12 bg-[#D2BEDD] rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-[#FE7743] rounded-lg flex items-center justify-center">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
@@ -184,7 +186,7 @@ We focus on precision, honor our commitments, and strive to exceed expectations,
       
       <Link href="/contact">
             <motion.button
-        className="  px-8 py-4 border-2 border-[#7D4199] text-white font-heading text-lg rounded-full bg-transparent transition-all duration-300 hover:text-[#7D4199] hover:bg-white"
+        className="  px-8 py-4 border-2 border-[#FE7743] text-white font-heading text-lg rounded-full bg-transparent transition-all duration-300 hover:text-[#FE7743] hover:bg-white"
         whileHover={{ 
           scale: 1.05,
         }}

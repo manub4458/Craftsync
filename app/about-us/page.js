@@ -67,7 +67,7 @@ const Aboutus = () => {
           className="font-display mt-2 word-paragraph text-7xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[8rem] mb-6 text-center leading-none"
         >
           <span className="text-white block">CRAFTING DREAMS</span>
-          <span className="text-[#7D4199] flex items-center justify-center gap-2 lg:gap-4 relative">
+          <span className="text-[#FE7743] flex items-center justify-center gap-2 lg:gap-4 relative">
             SYNCING REALITY
           </span>
           <span className="text-white block"></span>
