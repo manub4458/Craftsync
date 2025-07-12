@@ -86,12 +86,12 @@ We’re more than just experts—we’re collaborators, problem-solvers, and cre
             />
             <div className="p-6">
               <h3 className="text-2xl font-semibold text-[#E0E0E0] font-heading mb-2">Manik</h3>
-              <p className="text-lg text-[#7D4199] mb-4">CEO</p>
+              <p className="text-lg text-[#FE7743] mb-4">CEO</p>
               <p className="text-sm text-gray-400 leading-relaxed">
                 Manik brings visionary ideas to life with a passion for innovative design and storytelling, leading our creative projects with unmatched enthusiasm.
               </p>
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#7D4199]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#FE7743]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
 
           {/* Team Member 2 */}
@@ -106,12 +106,12 @@ We’re more than just experts—we’re collaborators, problem-solvers, and cre
             />
             <div className="p-6">
               <h3 className="text-2xl font-semibold text-[#E0E0E0] font-heading mb-2">Manav</h3>
-              <p className="text-lg text-[#7D4199]  mb-4">Lead Developer</p>
+              <p className="text-lg text-[#FE7743]  mb-4">Lead Developer</p>
               <p className="text-sm text-gray-400 leading-relaxed">
                 Manav crafts seamless digital experiences with his expertise in coding and problem-solving, driving our tech innovations forward.
               </p>
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#7D4199]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#FE7743]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
 
           {/* Team Member 3 */}
@@ -126,12 +126,12 @@ We’re more than just experts—we’re collaborators, problem-solvers, and cre
             />
             <div className="p-6">
               <h3 className="text-2xl font-semibold text-[#E0E0E0] font-heading mb-2">Aryan</h3>
-              <p className="text-lg text-[#7D4199] mb-4">Full-Stak Developer</p>
+              <p className="text-lg text-[#FE7743] mb-4">Full-Stak Developer</p>
               <p className="text-sm text-gray-400 leading-relaxed">
-               Aryan's full-stack expertise powers seamless digital experiences from front to back. With a sharp eye for design and solid backend logic, he builds fast, scalable, and user-focused web solutions.
+               Aryan&apos;s full-stack expertise powers seamless digital experiences from front to back. With a sharp eye for design and solid backend logic, he builds fast, scalable, and user-focused web solutions.
               </p>
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#7D4199]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#FE7743]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
 
           {/* Team Member 4 */}
@@ -146,12 +146,49 @@ We’re more than just experts—we’re collaborators, problem-solvers, and cre
             />
             <div className="p-6">
               <h3 className="text-2xl font-semibold text-[#E0E0E0] font-heading mb-2">Sidharth</h3>
-              <p className="text-lg text-[#7D4199] mb-4">Lead Designer</p>
+              <p className="text-lg text-[#FE7743] mb-4">Lead Designer</p>
               <p className="text-sm text-gray-400 leading-relaxed">
                 Sidharth crafts intuitive interfaces and delightful user experiences, ensuring our products are both beautiful and easy to use.
               </p>
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#7D4199]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#FE7743]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+        {/* team member5 */}
+                <div className="relative group bg-[#1A1A1A] rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <Image
+              src="/priyauiux.jpg"
+              alt="Team Member 5"
+              width={400}
+              height={400}
+              className="w-full h-64 object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+            <div className="p-6">
+              <h3 className="text-2xl font-semibold text-[#E0E0E0] font-heading mb-2">Priya</h3>
+              <p className="text-lg text-[#FE7743] mb-4">Junior Designer</p>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Priya specializes in crafting eye-catching social media posts, graphics, and visual content that align with brand aesthetics and marketing goals.
+              </p>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#FE7743]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+                  {/* team member5 */}
+            <div className="relative group bg-[#1A1A1A] rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <Image
+              src="/shivamm.jpg"
+              alt="Team Member 6"
+              width={400}
+              height={400}
+              className="w-full h-64 object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+            <div className="p-6">
+              <h3 className="text-2xl font-semibold text-[#E0E0E0] font-heading mb-2">Shivam</h3>
+              <p className="text-lg text-[#FE7743] mb-4">Solution architect</p>
+              <p className="text-sm text-gray-400 leading-relaxed">
+Shivam designs scalable and efficient system architectures that power our digital marketing operations. He ensures seamless tech integration, aligning every solution with client goals and long-term performance.              </p>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#FE7743]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
         </div>
       </div>

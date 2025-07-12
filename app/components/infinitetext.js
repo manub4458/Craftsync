@@ -84,7 +84,7 @@ export default function InfiniteScroller() {
       `}</style>
       
       <div className="scroller-container bg-[#111] py-10">
-        <h1 className="text-white text-lg md:text-3xl text-primary-dark font-bold font-heading text-center ">Customized Strategies for Every Sector</h1>
+        <h1 className=" text-lg md:text-3xl text-[#FE7743] font-bold font-heading text-center ">Customized Strategies for Every Sector</h1>
         <div ref={topRowRef} className="scroller-row">
           <div className="item-group ">
             <span className="hollow-text">DIGITAL MARKETING</span>
