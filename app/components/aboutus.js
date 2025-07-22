@@ -1,6 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+<<<
+import Link from 'next/link':
 const DigitalPartnerSection = () => {
   return (
     <section className=" py-2 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#111]">
