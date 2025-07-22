@@ -6,7 +6,7 @@ const ProfessionalsSection = () => {
 
 
   return (
-    <section className="py-16  px-4 sm:px-6 lg:px-8 bg-[#111]">
+    <section className=" py-2 sm:py-16  px-4 sm:px-6 lg:px-8 bg-[#111]">
       <div className="max-w-7xl mx-auto">
         {/* Header with image */}
  <div className="lg:col-span-6 text-center mb-10 px-4">
@@ -109,7 +109,7 @@ Enthusiastic, motivated, and ready to exceed expectations, we deliver skill and 
       
       <Link href="/contact">
             <motion.button
-        className="  px-8 py-4 border-2 border-[#7D4199] text-white font-heading text-lg rounded-full bg-transparent transition-all duration-300 hover:text-[#7D4199] hover:bg-white"
+        className="  px-8 py-4 border-2 cursor-pointer border-[#7D4199] text-white font-heading text-lg rounded-full bg-transparent transition-all duration-300 hover:text-[#7D4199] hover:bg-white"
         whileHover={{ 
           scale: 1.05,
         }}
@@ -128,7 +128,7 @@ Enthusiastic, motivated, and ready to exceed expectations, we deliver skill and 
           e.target.style.boxShadow = 'none';
         }}
       >
-        Connect with Our Professionals
+        Connect With Our Professionals
       </motion.button>
       </Link>
             </div>

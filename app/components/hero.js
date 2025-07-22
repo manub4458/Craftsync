@@ -2,7 +2,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-
+import Link from 'next/link';
 const HeroSection = () => {
   const [mounted, setMounted] = useState(false);
 
@@ -121,7 +121,7 @@ const HeroSection = () => {
   if (!mounted) return null;
 
   return (
-    <section className="relative  bg-[#111] overflow-hidden py-20 px-4">
+    <section className="relative  bg-[#111] overflow-hidden py-8 sm:py-20 px-4">
       {/* Background gradient effects */}
       {/* <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-blue-900/20"></div>
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
@@ -190,7 +190,35 @@ const HeroSection = () => {
   >
  Empowering top brands and organizations with high-impact websites and performance-focused digital marketing strategies.
   </motion.p>
+                 <div className="flex justify-center mt-10">
+      
+      <Link href="/contact">
+            <motion.button
+        className="  px-8 py-4 border-2 cursor-pointer border-[#7D4199] text-white font-heading text-lg rounded-full bg-transparent transition-all duration-300 hover:text-[#7D4199] hover:bg-white"
+        whileHover={{ 
+          scale: 1.05,
+        }}
+        whileTap={{ scale: 0.95 }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
+        style={{
+          boxShadow: 'none',
+          transition: 'all 0.3s ease'
+        }}
+        onMouseEnter={(e) => {
+          e.target.style.boxShadow = '0 0 0 8px rgba(125, 65, 153, 0.2)';
+        }}
+        onMouseLeave={(e) => {
+          e.target.style.boxShadow = 'none';
+        }}
+      >
+        Get Started Now
+      </motion.button>
+      </Link>
+            </div>
 </div>
+
 
           {/* Right floating images */}
           <div className="hidden lg:block ml-24 lg:col-span-3 relative">
@@ -252,6 +280,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
     </section>
   );
 };

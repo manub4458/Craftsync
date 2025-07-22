@@ -21,8 +21,77 @@ const ContactOverlay = () => {
     emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
   }, []);
 
+  const validateField = (name, value) => {
+    let error = '';
+
+    if (name === 'fullName') {
+      if (!value.trim()) {
+        error = 'Full name is required';
+      } else if (!/^[A-Za-z\s]{2,}$/.test(value.trim())) {
+        error = 'Name must be at least 2 letters and only contain letters and spaces';
+      }
+    }
+
+    if (name === 'email') {
+      if (!value.trim()) {
+        error = 'Email is required';
+      } else if (/\s/.test(value)) {
+        error = 'Email cannot contain spaces';
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+        error = 'Invalid email';
+      }
+    }
+
+if (name === 'phone') {
+  if (!value.trim()) {
+    error = 'Phone number is required';
+  } else if (/\s/.test(value)) {
+    error = 'Phone cannot contain spaces';
+  } else if (!/^\d{10}$/.test(value)) {
+    error = 'Phone must be exactly 10 digits';
+  } else if (/^0/.test(value)) {
+    error = 'Phone number cannot start with 0';
+  } else if (/[^0-9]/.test(value)) {
+    error = 'Phone number cannot contain alphabets';
+  }
+}
+
+    if (name === 'message') {
+      if (!value.trim()) {
+        error = 'Message is required';
+      } else if (/^\s|\s$/.test(value)) {
+        error = 'Message cannot start or end with a space';
+      } else if (value.trim().length < 10) {
+        error = 'Message must be at least 10 characters';
+      } else if (/https?:\/\//.test(value)) {
+        error = 'Message cannot contain links';
+      }
+    }
+
+    if (name === 'hearAbout' && value && /\s/.test(value)) {
+      error = 'Selection cannot contain spaces';
+    }
+
+    return error;
+  };
+
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
+
+    const fieldValue = type === 'checkbox' ? checked : value;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: fieldValue,
+    }));
+
+    // Validate field on change
+    const error = validateField(name, fieldValue);
+    setErrors((prev) => ({
+      ...prev,
+      [name]: error,
+    }));
+
     setFormData((prev) => ({
       ...prev,
       [name]: type === 'checkbox' ? checked : value,
@@ -35,11 +104,55 @@ const ContactOverlay = () => {
 
   const validateForm = () => {
     const newErrors = {};
+
+
+    // Full Name: required, allow spaces
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = 'Full name is required';
+    }
+
+    // Email: required, valid format, no spaces
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (/\s/.test(formData.email)) {
+      newErrors.email = 'Email cannot contain spaces';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Invalid email';
+    }
+
+    // Phone: required, 10 digits, no spaces
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Phone is required';
+    } else if (/\s/.test(formData.phone)) {
+      newErrors.phone = 'Phone cannot contain spaces';
+    } else if (!/^\d{10}$/.test(formData.phone)) {
+      newErrors.phone = 'Phone must be exactly 10 digits';
+    } else if (/^0/.test(formData.phone)) {
+      newErrors.phone = 'Phone number cannot start with 0';
+    }
+
+    // Message: required, no leading/trailing spaces
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+    } else if (/^\s|\s$/.test(formData.message)) {
+      newErrors.message = 'Message cannot start or end with a space';
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = 'Message must be at least 10 characters';
+    } else if (/https?:\/\//.test(formData.message)) {
+      newErrors.message = 'Message cannot contain links';
+    }
+
+    // Optional: hearAbout, no spaces (if selected)
+    if (formData.hearAbout && /\s/.test(formData.hearAbout)) {
+      newErrors.hearAbout = 'Selection cannot contain spaces';
+    }
+
     if (!formData.fullName.trim()) newErrors.fullName = 'Full name is required';
     if (!formData.email.trim()) newErrors.email = 'Email is required';
     else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Invalid email';
     if (!formData.phone.trim()) newErrors.phone = 'Phone is required';
     if (!formData.message.trim()) newErrors.message = 'Message is required';
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -109,7 +222,7 @@ const ContactOverlay = () => {
       {/* Open Button */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className="font-display text-primary-dark fixed -right-8 -rotate-90 top-1/2 transform -translate-y-1/2 z-50 px-6 py-2 rounded-lg font-bold text-black shadow-lg overflow-hidden"
+        className="font-display cursor-pointer text-primary-dark fixed -right-8 -rotate-90 top-1/2 transform -translate-y-1/2 z-50 px-6 py-2 rounded-lg font-bold text-black shadow-lg overflow-hidden"
         style={{ backgroundColor: '#D2BEDD' }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -133,18 +246,25 @@ const ContactOverlay = () => {
               background: 'linear-gradient(135deg, #D2BEDD 0%, #E8D5E8 50%, #F0E6F0 100%)',
             }}
           >
+
+            <motion.div className="w-full h-full overflow-y-auto hide-scrollbar" variants={contentVariants}>
+
             <motion.div className="w-full h-full overflow-y-auto" variants={contentVariants}>
               <div className="min-h-screen p-8 lg:p-12 relative">
                 
                 {/* Close Button */}
                 <motion.button
                   onClick={() => setIsOpen(false)}
+
+                  className="absolute cursor-pointer top-6 right-6 p-3 rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition-all duration-300 backdrop-blur-sm"
+
                   className="absolute top-6 right-6 p-3 rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition-all duration-300 backdrop-blur-sm"
+
                   whileHover={{ scale: 1.1, rotate: 90 }}
                   whileTap={{ scale: 0.9 }}
                   initial={{ opacity: 0, rotate: -90 }}
                   animate={{ opacity: 1, rotate: 0 }}
-                  transition={{ delay: 0.01 }}
+                  transition={{ delay: 0, duration: 0.001 }}
                 >
                   <X size={24} color="black" />
                 </motion.button>
@@ -192,6 +312,197 @@ const ContactOverlay = () => {
                       ))}
                     </div>
                   </motion.div>
+
+
+                  {/* Right Form */}
+                <motion.div 
+                      className="bg-white bg-opacity-20 backdrop-blur-md p-8 rounded-2xl border border-white border-opacity-30 shadow-xl"
+                      variants={contentVariants}
+                      initial="hidden"
+                      animate="visible"
+                      transition={{ delay: 0.2 }}
+                      whileHover={{ 
+                        y: -5,
+                        boxShadow: '0 25px 50px rgba(0,0,0,0.1)' 
+                      }}
+                    >
+                      <motion.h2 
+                        className="font-heading text-xl sm:text-3xl text-black mb-6"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 }}
+                      >
+                        GET IN TOUCH
+                      </motion.h2>
+                      
+                      <form onSubmit={handleSubmit} className="space-y-6">
+                        <motion.div 
+                          className="grid md:grid-cols-2 gap-4"
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.4 }}
+                        >
+                          <div>
+                            <div className="block text-black font-semibold mb-2">
+                              Full Name <span className="text-red-500">*</span>
+                            </div>
+                            <input
+                              type="text"
+                              name="fullName"
+                              value={formData.fullName}
+                              onChange={handleInputChange}
+                              className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 bg-white bg-opacity-70 backdrop-blur-sm transition-all duration-300 hover:bg-opacity-80 ${
+                                errors.fullName 
+                                  ? 'border-red-500 focus:ring-red-500' 
+                                  : 'border-gray-300 focus:ring-black'
+                              }`}
+                              placeholder="Enter your full name"
+                            />
+                            {errors.fullName && (
+                              <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>
+                            )}
+                          </div>
+                          <div>
+                            <div className="block text-black font-semibold mb-2">
+                              Email Address <span className="text-red-500">*</span>
+                            </div>
+                            <input
+                              type="email"
+                              name="email"
+                              value={formData.email}
+                              onChange={handleInputChange}
+                              className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 bg-white bg-opacity-70 backdrop-blur-sm transition-all duration-300 hover:bg-opacity-80 ${
+                                errors.email 
+                                  ? 'border-red-500 focus:ring-red-500' 
+                                  : 'border-gray-300 focus:ring-black'
+                              }`}
+                              placeholder="Enter your email address"
+                            />
+                            {errors.email && (
+                              <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                            )}
+                          </div>
+                        </motion.div>
+
+                        <motion.div 
+                          className="grid md:grid-cols-2 gap-4"
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.5 }}
+                        >
+                          <div>
+                            <div className="block text-black font-semibold mb-2">
+                              Phone Number <span className="text-red-500">*</span>
+                            </div>
+                            <input
+                              type="tel"
+                              name="phone"
+                              value={formData.phone}
+                              onChange={handleInputChange}
+                              className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 bg-white bg-opacity-70 backdrop-blur-sm transition-all duration-300 hover:bg-opacity-80 ${
+                                errors.phone 
+                                  ? 'border-red-500 focus:ring-red-500' 
+                                  : 'border-gray-300 focus:ring-black'
+                              }`}
+                              placeholder="Enter your phone number"
+                            />
+                            {errors.phone && (
+                              <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                            )}
+                          </div>
+                          <div>
+                            <div className="block text-black font-semibold mb-2">
+                              How did you hear about us?
+                            </div>
+                            <select
+                              name="hearAbout"
+                              value={formData.hearAbout}
+                              onChange={handleInputChange}
+                              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black bg-white bg-opacity-70 backdrop-blur-sm transition-all duration-300 hover:bg-opacity-80"
+                            >
+                              <option value="">Please Select</option>
+                              <option value="google">Google Search</option>
+                              <option value="social">Social Media</option>
+                              <option value="referral">Referral</option>
+                              <option value="other">Other</option>
+                            </select>
+                          </div>
+                        </motion.div>
+
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.6 }}
+                        >
+                          <div className="block text-black font-semibold mb-2">
+                            How can we help? <span className="text-red-500">*</span>
+                          </div>
+                          <textarea
+                            name="message"
+                            value={formData.message}
+                            onChange={handleInputChange}
+                            rows={4}
+                            className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 resize-vertical bg-white bg-opacity-70 backdrop-blur-sm transition-all duration-300 hover:bg-opacity-80 ${
+                              errors.message 
+                                ? 'border-red-500 focus:ring-red-500' 
+                                : 'border-gray-300 focus:ring-black'
+                            }`}
+                            placeholder="Tell us about your project or how we can help you..."
+                          />
+                          {errors.message && (
+                            <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                          )}
+                        </motion.div>
+
+                        <motion.div 
+                          className="flex items-start space-x-3"
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.7 }}
+                        >
+                          <input
+                            type="checkbox"
+                            name="subscribe"
+                            checked={formData.subscribe}
+                            onChange={handleInputChange}
+                            className="mt-1 w-4 h-4 text-black bg-gray-100 border-gray-300 rounded focus:ring-black focus:ring-2"
+                          />
+                          <div className="text-black text-sm">
+                            Subscribe for the latest news and insights delivered to your inbox
+                          </div>
+                        </motion.div>
+
+                        <motion.div 
+                          className="flex flex-col space-y-4"
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.8 }}
+                        >
+                          <motion.button
+                            type="submit"
+                            disabled={isSubmitting}
+                            className={`px-8 py-4 rounded-full font-bold transition-all duration-300 ${
+                              isSubmitting
+                                ? 'bg-gray-400 text-gray-700 cursor-not-allowed'
+                                : 'bg-black text-white hover:bg-gray-800'
+                            }`}
+                            whileHover={!isSubmitting ? { 
+                              scale: 1.05, 
+                              boxShadow: '0 10px 30px rgba(0,0,0,0.3)' 
+                            } : {}}
+                            whileTap={!isSubmitting ? { scale: 0.95 } : {}}
+                          >
+                            {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
+                          </motion.button>
+                          <p className="text-black text-sm">
+                            By submitting this form I accept the{' '}
+                            <a href="#" className="underline hover:no-underline">Privacy Policy</a>{' '}
+                            of this site.
+                          </p>
+                        </motion.div>
+                      </form>
+                    </motion.div>
+
 
                   {/* Right Form */}
                   <div className="bg-white bg-opacity-20 backdrop-blur-md p-8 rounded-2xl border border-white border-opacity-30 shadow-xl">
@@ -244,6 +555,7 @@ const ContactOverlay = () => {
                       </button>
                     </form>
                   </div>
+
 
                 </div>
               </div>

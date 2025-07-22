@@ -2,12 +2,13 @@
 import React from 'react'
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useLenis } from '../hooks/lenis'; // Import the custom hook
 import InifiniteScroller from '../components/infinitetext'; // Adjust the import path as necessary
 import HeroSection from './component1';
 import TeamSection from './team';
 import WhatMakesUsDifferent from './whyus2';
 const Aboutus = () => {
-
+   useLenis(); // Initialize Lenis
     // Text animation variants
   const textVariants = {
     initial: { 

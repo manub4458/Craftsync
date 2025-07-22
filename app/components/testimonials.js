@@ -5,63 +5,92 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 const testimonials = [
   {
-    text: "TheCraftsync's social media marketing boosted our engagement. Their expertise in UI/UX made our website stand out!",
-    name: "Arjun Sharma",
-    position: "Digital Marketing Manager",
-    image: "/arjun.webp",
+    text: "I have a business of tiles and marbles and had a best experience with The Craft Sync! These guys not just do digital marketing, but also guide like a partner. Gave me free business advice too, which actually helped a lot. Super supportive team, always available, always helpful. My business got good results, more inquiries coming. Highly recommended!",
+    name: "Nitin Pal",
+    rating: 5,
+    image: "/t1.png",
   },
   {
-    text: "Exceptional app development by TheCraftsync. Their web design skills are top-notch and professional.",
-    name: "Priya Desai",
-    position: "CTO",
-    image: "/priya.webp",
+    text: "If you need top-notch digital marketing without spending a fortune, The Craft Sync is the way to go! They’ve helped my business grow with smart strategies and expert marketing. Feels like having an actual business partner, not just a service provider. Best digital marketing company in Haridwar and Uttarakhand!",
+    name: "Manav Tyagi",
+    rating: 5,
+    image: "/t2.png",
   },
   {
-    text: "Their e-commerce site development exceeded expectations. The team’s attention to UI/UX is remarkable.",
-    name: "Rahul Verma",
-    position: "E-commerce Head",
-    image: "/rahul.webp",
+    text: "The Craft Sync might be a small company, but man, they deliver like the big guys! Super fast, super effective, and way more affordable. They handle all my digital stuff—social media, website, marketing—you name it. Feels more like a business partner than just a service. Always there, even late nights, plus they give free advice that actually works! Definitely recommend them!",
+    name: "Paradise Uttarakhand",
+    rating: 5,
+    image: "/t3.png",
   },
   {
-    text: "TheCraftsync’s web development transformed our online presence. Highly recommend their digital services!",
-    name: "Neha Gupta",
-    position: "Business Owner",
-    image: "/neha.webp",
+    text: "I recently gotta chance to with The Craft Sync, their innovative ideas, technical expertise, and commitment to quality is excellent. Their team delivers scalable, future-proof solutions while maintaining excellent communication and responsiveness. With a strong focus on customer collaboration and timely execution, they are a reliable choice for any software development needs. Highly recommended",
+    name: "Winston Vivek",
+    rating: 5,
+    image: "/t4.png",
   },
   {
-    text: "Amazing website designing by TheCraftsync. Their app development skills are a game-changer for us.",
-    name: "Vikram Singh",
-    position: "IT Manager",
-    image: "/vikram.webp",
+    text: "Working with The Craft Sync has been a fantastic experience for us at Paradise Bliss Tours! 🌟Initially, we were just starting and budget was a big concern, but Manik and his team truly supported us by offering very reasonable pricing without compromising on quality.Unhone sirf hamare expectations poore nahi kiye, balki kaafi had tak exceed bhi kiya. 😇",
+    name: "Paradise Bliss Tours",
+    rating: 5,
+    image: "/t5.png",
+  },
+  {
+    text: "I had pleasure of working with the craft sync and I must say this is the best digital marketing agency in Haridwar. Me and my friend wants to run a campaign related to property dealing, and the craft sync helped us very well getting the good leads.",
+    name: "Lakshya Chauhan",
+    rating: 5,
+    image: "/t6.png",
   },
 ];
 
+const renderStars = (count) => (
+  <div className="flex items-center gap-1 mt-1">
+    {[...Array(count)].map((_, i) => (
+      <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+        <polygon points="10,1 12.59,7.36 19.51,7.36 13.96,11.63 16.55,17.99 10,13.72 3.45,17.99 6.04,11.63 0.49,7.36 7.41,7.36" />
+      </svg>
+    ))}
+  </div>
+);
+
+const InfiniteRow = ({ testimonials, reverse }) => (
+  <div
+    className={`overflow-hidden w-full`}
+    style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)' }}
+  >
+    <div
+      className={`flex space-x-6`}
+      style={{
+        animation: `${reverse ? 'scrollReverse' : 'scrollForward'} 20s linear infinite`,
+        willChange: 'transform',
+      }}
+    >
+      {[...testimonials, ...testimonials].map((testimonial, i) => (
+        <div key={i} className="bg-[#1A1A1A] p-6 rounded-2xl shadow-lg min-w-[300px] md:min-w-[350px] max-w-[300px] flex flex-col">
+          <p className="text-gray-400 mb-4 text-sm md:text-base">
+            {testimonial.text}
+          </p>
+          <div className="border-t border-gray-600 my-4"></div>
+          <div className="flex items-center gap-4">
+            <Image
+              src={testimonial.image}
+              alt={testimonial.name}
+              width={50}
+              height={50}
+              className="rounded-full h-12 w-12 object-cover"
+            />
+            <div>
+              <p className="text-white font-semibold">{testimonial.name}</p>
+              {renderStars(testimonial.rating)}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
 const TestimonialsSection = () => {
-  const row1Ref = useRef(null);
-  const row2Ref = useRef(null);
-
-  useEffect(() => {
-    const row1 = row1Ref.current;
-    const row2 = row2Ref.current;
-
-    row1.innerHTML += row1.innerHTML;
-    row2.innerHTML += row2.innerHTML;
-
-    gsap.to(row1, {
-      x: '-40%',
-      duration: 20,
-      repeat: -2,
-      ease: 'none',
-    });
-
-    gsap.to(row2, {
-      x: '40%',
-      duration: 20,
-      repeat: -2,
-      ease: 'none',
-    });
-  }, []);
-       // Text animation variants
+  // Text animation variants
   const textVariants = {
     initial: { 
       opacity: 0, 
@@ -95,123 +124,89 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-[#111] relative overflow-hidden">
+    <section className="py-2 sm:py-20 bg-[#111] relative overflow-hidden">
+      <style>
+        {`
+          @keyframes scrollForward {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          @keyframes scrollReverse {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+          }
+        `}
+      </style>
       <div className="container mx-auto px-4">
-   <div className="lg:col-span-6 text-center mb-10 px-4">
-<motion.h1
-  variants={textVariants}
-  initial="initial"
-  animate="animate"
-  className="font-heading mt-6 word-subheading uppercase text-5xl sm:text-8xl md:text-8xl lg:text-7xl xl:text-7xl 2xl:text-[6rem] mb-6 text-center"
->
-  <span className="text-white">DISCOVER WHY OUR <br/> </span>
-  <span className="text-white relative inline-block flex items-center justify-center gap-2 lg:gap-4">
-    CLIENTS ADORE
-    <motion.img
-      src="heart.png" // Replace with your image URL
-      alt="transform icon"
-      className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 inline-block"
-      initial={{ opacity: 0, scale: 0 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ 
-        duration: 0.5, 
-        delay: 1.2, 
-        ease: "backOut" 
-      }}
-      whileHover={{ scale: 1.1, rotate: 10 }}
-    />
-  </span>
+        <div className="lg:col-span-6 text-center mb-10 px-4">
+          <motion.h1
+            variants={textVariants}
+            initial="initial"
+            animate="animate"
+            className="font-heading mt-6 word-subheading uppercase text-5xl sm:text-8xl md:text-8xl lg:text-7xl xl:text-7xl 2xl:text-[6rem] mb-6 text-center"
+          >
+            <span className="text-white">DISCOVER WHY OUR <br/> </span>
+            <span className="text-white relative inline-block flex items-center justify-center gap-2 lg:gap-4">
+              CLIENTS ADORE
+              <motion.img
+                src="heart.png" // Replace with your image URL
+                alt="transform icon"
+                className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 inline-block"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ 
+                  duration: 0.5, 
+                  delay: 1.2, 
+                  ease: "backOut" 
+                }}
+                whileHover={{ scale: 1.1, rotate: 10 }}
+              />
+            </span>
 
-  <span className="text-white">US</span>
-</motion.h1>
+            <span className="text-white">US</span>
+          </motion.h1>
 
-  <motion.p
-    variants={subtextVariants}
-    initial="initial"
-    animate="animate"
-    className="text-gray-300 font-paragraph text-lg sm:text-lg max-w-2xl mx-auto leading-relaxed"
-  >
-We focus on precision, honor our commitments, and strive to exceed expectations, which builds the trust our clients rely on.
-</motion.p>
-</div>
-
+          <motion.p
+            variants={subtextVariants}
+            initial="initial"
+            animate="animate"
+            className="text-gray-300 font-paragraph text-lg sm:text-lg max-w-2xl mx-auto leading-relaxed"
+          >
+          We focus on precision, honor our commitments, and strive to exceed expectations, which builds the trust our clients rely on.
+          </motion.p>
+        </div>
         {/* First Row */}
-        <div ref={row1Ref} className="flex space-x-6 mb-8">
-          {testimonials.map((testimonial, i) => (
-            <div key={i} className="bg-[#1A1A1A] p-6 rounded-2xl shadow-lg min-w-[300px] md:min-w-[350px] max-w-[300px] flex flex-col">
-              <p className="text-gray-400 mb-4 text-sm md:text-base">
-                {testimonial.text}
-              </p>
-              <div className="border-t border-gray-600 my-4"></div>
-              <div className="flex items-center gap-4">
-                <Image
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  width={50}
-                  height={50}
-                  className="rounded-full h-12 w-12 object-cover"
-                />
-                <div>
-                  <p className="text-white font-semibold">{testimonial.name}</p>
-                  <p className="text-gray-400 text-sm">{testimonial.position}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
+        <InfiniteRow testimonials={testimonials} reverse={false} />
+        {/* Add space between rows */}
+        <div className="h-8" /> {/* You can adjust 'h-8' for more/less space */}
         {/* Second Row */}
-        <div ref={row2Ref} className="flex space-x-6">
-          {testimonials.map((testimonial, i) => (
-            <div key={i} className="bg-[#1A1A1A] p-6 rounded-2xl shadow-lg min-w-[300px] md:min-w-[350px] max-w-[300px] flex flex-col">
-              <p className="text-gray-400 mb-4 text-sm md:text-base">
-                {testimonial.text}
-              </p>
-              <div className="border-t border-gray-600 my-4"></div>
-              <div className="flex items-center gap-4">
-                <Image
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  width={50}
-                  height={50}
-                  className="rounded-full h-12 w-12 object-cover"
-                />
-                <div>
-                  <p className="text-white font-semibold">{testimonial.name}</p>
-                  <p className="text-gray-400 text-sm">{testimonial.position}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <InfiniteRow testimonials={testimonials} reverse={true} />
       </div>
       <div className="hidden md:block absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-[#040404] via-[#040404] to-transparent pointer-events-none"></div>
       <div className="hidden md:block absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-[#040404] via-[#040404] to-transparent pointer-events-none"></div>
       <div className="flex justify-center mt-10">
-
-
-      <motion.button
-  className="  px-8 py-4 border-2 border-[#7D4199] text-white font-heading text-lg rounded-full bg-transparent transition-all duration-300 hover:text-[#7D4199] hover:bg-white"
-  whileHover={{ 
-    scale: 1.05,
-  }}
-  whileTap={{ scale: 0.95 }}
-  initial={{ opacity: 0, y: 30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.8, duration: 0.6 }}
-  style={{
-    boxShadow: 'none',
-    transition: 'all 0.3s ease'
-  }}
-  onMouseEnter={(e) => {
-    e.target.style.boxShadow = '0 0 0 8px rgba(125, 65, 153, 0.2)';
-  }}
-  onMouseLeave={(e) => {
-    e.target.style.boxShadow = 'none';
-  }}
->
-  Read All Reviews
-</motion.button>
+        <motion.button
+          className="  px-8 py-4 border-2 cursor-pointer border-[#7D4199] text-white font-heading text-lg rounded-full bg-transparent transition-all duration-300 hover:text-[#7D4199] hover:bg-white"
+          whileHover={{ 
+            scale: 1.05,
+          }}
+          whileTap={{ scale: 0.95 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          style={{
+            boxShadow: 'none',
+            transition: 'all 0.3s ease'
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.boxShadow = '0 0 0 8px rgba(125, 65, 153, 0.2)';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.boxShadow = 'none';
+          }}
+        >
+          Read All Reviews
+        </motion.button>
       </div>
     </section>
   );

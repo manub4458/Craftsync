@@ -186,7 +186,7 @@ We focus on precision, honor our commitments, and strive to exceed expectations,
       
       <Link href="/contact">
             <motion.button
-        className="  px-8 py-4 border-2 border-[#FE7743] text-white font-heading text-lg rounded-full bg-transparent transition-all duration-300 hover:text-[#FE7743] hover:bg-white"
+        className="  px-8 py-4 cursor-pointer border-2 border-[#FE7743] text-white font-heading text-lg rounded-full bg-transparent transition-all duration-300 hover:text-[#FE7743] hover:bg-white"
         whileHover={{ 
           scale: 1.05,
         }}

@@ -1,8 +1,10 @@
 'use client';
 import { motion } from 'framer-motion';
+<<<
+import Link from 'next/link':
 const DigitalPartnerSection = () => {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#111]">
+    <section className=" py-2 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#111]">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Text content - left side */}
@@ -39,9 +41,9 @@ Since 2020, we’ve earned a legacy of distinction, revolutionizing worldwide br
       </div>
          <div className="flex justify-center mt-10">
 
-
+<Link href="/about-us">
       <motion.button
-  className="  px-8 py-4 border-2 border-[#7D4199] text-white font-heading text-lg rounded-full bg-transparent transition-all duration-300 hover:text-[#7D4199] hover:bg-white"
+  className="  px-8 py-4  cursor-pointer border-2 border-[#7D4199] text-white font-heading text-lg rounded-full bg-transparent transition-all duration-300 hover:text-[#7D4199] hover:bg-white"
   whileHover={{ 
     scale: 1.05,
   }}
@@ -62,6 +64,7 @@ Since 2020, we’ve earned a legacy of distinction, revolutionizing worldwide br
 >
 Know More About Us
 </motion.button>
+</Link>
       </div>
 
       

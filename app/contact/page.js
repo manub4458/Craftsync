@@ -23,43 +23,83 @@ const ContactPage = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const validateField = (name, value) => {
+    let error = '';
+
+    if (name === 'fullName') {
+      if (!value.trim()) {
+        error = 'Full name is required';
+      } else if (!/^[A-Za-z\s]{2,}$/.test(value.trim())) {
+        error = 'Name must be at least 2 letters and only contain letters and spaces';
+      }
+    }
+
+    if (name === 'email') {
+      if (!value.trim()) {
+        error = 'Email is required';
+      } else if (/\s/.test(value)) {
+        error = 'Email cannot contain spaces';
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+        error = 'Please enter a valid email address';
+      }
+    }
+
+    if (name === 'phone') {
+      if (!value.trim()) {
+        error = 'Phone number is required';
+      } else if (/\s/.test(value)) {
+        error = 'Phone cannot contain spaces';
+      } else if (!/^\d{10}$/.test(value)) {
+        error = 'Phone must be exactly 10 digits';
+      } else if (/^0/.test(value)) {
+        error = 'Phone number cannot start with 0';
+      } else if (/[^0-9]/.test(value)) {
+        error = 'Phone number cannot contain alphabets.';
+      }
+    }
+
+    if (name === 'message') {
+      if (!value.trim()) {
+        error = 'Message is required';
+      } else if (/^\s|\s$/.test(value)) {
+        error = 'Message cannot start or end with a space';
+      } else if (value.trim().length < 10) {
+        error = 'Message must be at least 10 characters';
+      } else if (/https?:\/\//.test(value)) {
+        error = 'Message cannot contain links';
+      }
+    }
+
+    if (name === 'hearAbout' && value && /\s/.test(value)) {
+      error = 'Selection cannot contain spaces';
+    }
+
+    return error;
+  };
+
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
+    const fieldValue = type === 'checkbox' ? checked : value;
+
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: fieldValue
     }));
-    
-    // Clear error when user starts typing
-    if (errors[name]) {
-      setErrors(prev => ({
-        ...prev,
-        [name]: ''
-      }));
-    }
+
+    // Validate field on change
+    const error = validateField(name, fieldValue);
+    setErrors(prev => ({
+      ...prev,
+      [name]: error
+    }));
   };
 
   const validateForm = () => {
     const newErrors = {};
-    
-    if (!formData.fullName.trim()) {
-      newErrors.fullName = 'Full name is required';
-    }
-    
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email address';
-    }
-    
-    if (!formData.phone.trim()) {
-      newErrors.phone = 'Phone number is required';
-    }
-    
-    if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
-    }
-    
+    Object.keys(formData).forEach((key) => {
+      const error = validateField(key, formData[key]);
+      if (error) newErrors[key] = error;
+    });
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -147,7 +187,11 @@ const ContactPage = () => {
             >
               <h2 className="text-sm font-bold text-white mb-2 tracking-wider">CONTACT</h2>
               <h1 className="font-display text-5xl lg:text-6xl font-black uppercase text-white leading-tight">
+
+                Let&apos;s make <br />
+
                 Let &apos; s make <br />
+
                 it happen{' '}
                 <span className="inline-block w-12 h-12 border-2 border-white rounded-full relative overflow-hidden">
                   <img
@@ -395,7 +439,7 @@ const ContactPage = () => {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`px-8 py-4 rounded-full font-bold transition-all duration-300 ${
+                  className={`px-8 py-4 cursor-pointer rounded-full font-bold transition-all duration-300 ${
                     isSubmitting
                       ? 'bg-gray-400 text-gray-700 cursor-not-allowed'
                       : 'bg-[#D2BEDD] text-black hover:bg-[#7D4199] hover:text-white'

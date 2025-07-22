@@ -19,7 +19,7 @@ export default function Footer() {
             </div>
 <div className="flex flex-col sm:flex-row gap-4">
   <Link href="/contact">
-  <button className="bg-[#D2BEDD] text-black px-4 sm:px-6 py-2 sm:py-3 font-bold rounded-full flex items-center gap-2 hover:bg-gray-100 hover:scale-105 transition-all duration-300 ease-in-out whitespace-nowrap text-sm sm:text-base shadow-md">
+  <button className="bg-[#D2BEDD] cursor-pointer text-black px-4 sm:px-6 py-2 sm:py-3 font-bold rounded-full flex items-center gap-2 hover:bg-gray-100 hover:scale-105 transition-all duration-300 ease-in-out whitespace-nowrap text-sm sm:text-base shadow-md">
     
     {/* Overlapping circular images */}
     <div className="flex items-center">
