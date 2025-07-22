@@ -39,7 +39,7 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className=" bg-[#111] mx-auto max-w-full pt-12 px-4 sm:px-6 lg:px-8">
+    <section className=" bg-[#111] mx-auto max-w-full  pt-2 sm:pt-12 px-4 sm:px-6 lg:px-8">
                   {/* Center content */}
  <div className="lg:col-span-6 text-center mb-10 px-4">
 <motion.h1
@@ -278,7 +278,7 @@ Innovative solutions. Strategic brilliance. Unprecedented growth. Let’s amplif
       
       
             <motion.button
-        className="  px-8 py-4 border-2 border-[#7D4199] text-white font-heading text-lg rounded-full bg-transparent transition-all duration-300 hover:text-[#7D4199] hover:bg-white"
+        className="  px-8 py-4 border-2 cursor-pointer border-[#7D4199] text-white font-heading text-lg rounded-full bg-transparent transition-all duration-300 hover:text-[#7D4199] hover:bg-white"
         whileHover={{ 
           scale: 1.05,
         }}

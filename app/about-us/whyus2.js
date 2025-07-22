@@ -44,7 +44,9 @@ export default function WhatMakesUsDifferent() {
   animate="animate"
   className="font-heading pt-1 md:pt-10  word-subheading uppercase text-5xl sm:text-8xl md:text-8xl lg:text-7xl xl:text-7xl 2xl:text-[6rem] mb-6 text-center"
 >
+
   <span className="text-white">Why We&apos;re      <motion.img
+
       src="58621.png" // Replace with your image URL
       alt="transform icon"
       className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 inline-block rotate-16"
@@ -184,7 +186,7 @@ We focus on precision, honor our commitments, and strive to exceed expectations,
       
       <Link href="/contact">
             <motion.button
-        className="  px-8 py-4 border-2 border-[#FE7743] text-white font-heading text-lg rounded-full bg-transparent transition-all duration-300 hover:text-[#FE7743] hover:bg-white"
+        className="  px-8 py-4 cursor-pointer border-2 border-[#FE7743] text-white font-heading text-lg rounded-full bg-transparent transition-all duration-300 hover:text-[#FE7743] hover:bg-white"
         whileHover={{ 
           scale: 1.05,
         }}

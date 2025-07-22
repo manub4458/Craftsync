@@ -1,9 +1,7 @@
 import Link from 'next/link';
 
 export default function Footer() {
-  console.log("hello");
   return (
-
     <footer className="bg-[#1A1A1A] text-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -11,13 +9,17 @@ export default function Footer() {
           <div className="space-y-6 ">
             <div className="flex items-center gap-2">
               <h2 className="text-5xl sm:text-3xl md:text-4xl lg:text-6xl word-wide font-display font-bold">
+
                 LET&apos;S WORK TOGETHER
+
+               
+
                 <img src="/love.png" loading='lazy' alt="smile" className=" hover:rotate-6 w-10 h-10 sm:w-10 sm:h-10 md:w-12 md:h-12 inline-block ml-2" />
               </h2>
             </div>
 <div className="flex flex-col sm:flex-row gap-4">
   <Link href="/contact">
-  <button className="bg-[#D2BEDD] text-black px-4 sm:px-6 py-2 sm:py-3 font-bold rounded-full flex items-center gap-2 hover:bg-gray-100 hover:scale-105 transition-all duration-300 ease-in-out whitespace-nowrap text-sm sm:text-base shadow-md">
+  <button className="bg-[#D2BEDD] cursor-pointer text-black px-4 sm:px-6 py-2 sm:py-3 font-bold rounded-full flex items-center gap-2 hover:bg-gray-100 hover:scale-105 transition-all duration-300 ease-in-out whitespace-nowrap text-sm sm:text-base shadow-md">
     
     {/* Overlapping circular images */}
     <div className="flex items-center">
@@ -38,7 +40,10 @@ export default function Footer() {
       />
     </div>
 
+
     LET&apos;S TALK
+
+  
   </button>
   </Link>
 </div>

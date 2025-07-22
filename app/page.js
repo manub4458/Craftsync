@@ -1,16 +1,18 @@
 'use client';
+
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { useLenis } from './hooks/lenis'; // Import the custom hook
 import DigitalPartnerSection from './components/aboutus';
 import Hero from './components/hero';
 import LogoStream from './components/infinitescroller';
-
 import ServicesSection from './components/services';
 import TestimonialsSection from './components/testimonials';
 import ProfessionalsSection from './components/whyus';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  useLenis(); // Initialize Lenis
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 1200);
@@ -20,14 +22,13 @@ export default function Home() {
   return (
     <>
       {/* Loader */}
-      {isLoading && (
+      {/* {isLoading && (
         <motion.div
           className="fixed inset-0 z-[9999] bg-[#111] flex items-center justify-center"
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 1.2, transition: { duration: 0.6, ease: 'easeOut' } }}
         >
-          {/* Glowing Heartbeat Logo */}
           <motion.img
             src="/logo.png"
             alt="Loading logo"
@@ -44,7 +45,6 @@ export default function Home() {
             transition={{ duration: 0.9, ease: 'easeInOut', repeat: Infinity }}
             style={{ zIndex: 1000 }}
           />
-          {/* Layered Neon Waves */}
           {[0, 0.3, 0.6, 0.9].map((delay, index) => (
             <motion.div
               key={index}
@@ -69,7 +69,6 @@ export default function Home() {
               }}
             />
           ))}
-          {/* Subtle Background Pulse */}
           <motion.div
             className="absolute inset-0"
             style={{ background: 'radial-gradient(circle, rgba(125,65,153,0.2), transparent)' }}
@@ -77,26 +76,25 @@ export default function Home() {
             transition={{ duration: 1.5, ease: 'easeInOut', repeat: Infinity }}
           />
         </motion.div>
-      )}
+      )} */}
 
       {/* Landing Page Content */}
       <motion.div
         initial={{ opacity: 0, scale: 0.95, filter: 'blur(8px)' }}
-        animate={{ 
-          opacity: isLoading ? 0 : 1, 
-          scale: isLoading ? 0.95 : 1, 
-          filter: isLoading ? 'blur(8px)' : 'blur(0px)' 
+        animate={{
+          opacity: isLoading ? 0 : 1,
+          scale: isLoading ? 0.95 : 1,
+          filter: isLoading ? 'blur(8px)' : 'blur(0px)',
         }}
-        transition={{ 
-          duration: 0.8, 
-          ease: [0.16, 1, 0.3, 1], // Smooth, elastic easing
-          delay: 0.4 
+        transition={{
+          duration: 0.8,
+          ease: [0.16, 1, 0.3, 1],
+          delay: 0.4,
         }}
       >
-
         <Hero />
-        <LogoStream />
         <DigitalPartnerSection />
+        <LogoStream />
         <ProfessionalsSection />
         <ServicesSection />
         <TestimonialsSection />
