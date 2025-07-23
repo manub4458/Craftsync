@@ -563,8 +563,8 @@ if (name === 'phone') {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+   
   );
 };
-
+ </>
 export default ContactOverlay;
