@@ -77,6 +77,7 @@ if (name === 'phone') {
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
+
     const fieldValue = type === 'checkbox' ? checked : value;
 
     setFormData((prev) => ({
@@ -90,10 +91,20 @@ if (name === 'phone') {
       ...prev,
       [name]: error,
     }));
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
+
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: '' }));
+    }
   };
 
   const validateForm = () => {
     const newErrors = {};
+
 
     // Full Name: required, allow spaces
     if (!formData.fullName.trim()) {
@@ -135,6 +146,12 @@ if (name === 'phone') {
     if (formData.hearAbout && /\s/.test(formData.hearAbout)) {
       newErrors.hearAbout = 'Selection cannot contain spaces';
     }
+
+    if (!formData.fullName.trim()) newErrors.fullName = 'Full name is required';
+    if (!formData.email.trim()) newErrors.email = 'Email is required';
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Invalid email';
+    if (!formData.phone.trim()) newErrors.phone = 'Phone is required';
+    if (!formData.message.trim()) newErrors.message = 'Message is required';
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -229,13 +246,20 @@ if (name === 'phone') {
               background: 'linear-gradient(135deg, #D2BEDD 0%, #E8D5E8 50%, #F0E6F0 100%)',
             }}
           >
+
             <motion.div className="w-full h-full overflow-y-auto hide-scrollbar" variants={contentVariants}>
+
+            <motion.div className="w-full h-full overflow-y-auto" variants={contentVariants}>
               <div className="min-h-screen p-8 lg:p-12 relative">
                 
                 {/* Close Button */}
                 <motion.button
                   onClick={() => setIsOpen(false)}
+
                   className="absolute cursor-pointer top-6 right-6 p-3 rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition-all duration-300 backdrop-blur-sm"
+
+                  className="absolute top-6 right-6 p-3 rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition-all duration-300 backdrop-blur-sm"
+
                   whileHover={{ scale: 1.1, rotate: 90 }}
                   whileTap={{ scale: 0.9 }}
                   initial={{ opacity: 0, rotate: -90 }}
@@ -288,6 +312,7 @@ if (name === 'phone') {
                       ))}
                     </div>
                   </motion.div>
+
 
                   {/* Right Form */}
                 <motion.div 
@@ -477,6 +502,60 @@ if (name === 'phone') {
                         </motion.div>
                       </form>
                     </motion.div>
+
+
+                  {/* Right Form */}
+                  <div className="bg-white bg-opacity-20 backdrop-blur-md p-8 rounded-2xl border border-white border-opacity-30 shadow-xl">
+                    <h2 className="font-heading text-xl sm:text-3xl text-black mb-6">GET IN TOUCH</h2>
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-black font-semibold mb-2">Full Name *</label>
+                          <input type="text" name="fullName" value={formData.fullName} onChange={handleInputChange} className="w-full p-3 border rounded-lg" placeholder="Enter your full name" />
+                          {errors.fullName && <p className="text-red-500 text-sm">{errors.fullName}</p>}
+                        </div>
+                        <div>
+                          <label className="block text-black font-semibold mb-2">Email *</label>
+                          <input type="email" name="email" value={formData.email} onChange={handleInputChange} className="w-full p-3 border rounded-lg" placeholder="Enter your email" />
+                          {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+                        </div>
+                      </div>
+
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-black font-semibold mb-2">Phone *</label>
+                          <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} className="w-full p-3 border rounded-lg" placeholder="Enter your phone number" />
+                          {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
+                        </div>
+                        <div>
+                          <label className="block text-black font-semibold mb-2">How did you hear?</label>
+                          <select name="hearAbout" value={formData.hearAbout} onChange={handleInputChange} className="w-full p-3 border rounded-lg">
+                            <option value="">Please Select</option>
+                            <option value="google">Google Search</option>
+                            <option value="social">Social Media</option>
+                            <option value="referral">Referral</option>
+                            <option value="other">Other</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="block text-black font-semibold mb-2">Message *</label>
+                        <textarea name="message" value={formData.message} onChange={handleInputChange} rows={4} className="w-full p-3 border rounded-lg" placeholder="Tell us about your project..." />
+                        {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
+                      </div>
+
+                      <div className="flex items-start space-x-3">
+                        <input type="checkbox" name="subscribe" checked={formData.subscribe} onChange={handleInputChange} />
+                        <span className="text-black text-sm">Subscribe for updates</span>
+                      </div>
+
+                      <button type="submit" disabled={isSubmitting} className="px-8 py-4 rounded-full font-bold bg-black text-white hover:bg-gray-800">
+                        {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
+                      </button>
+                    </form>
+                  </div>
+
 
                 </div>
               </div>
