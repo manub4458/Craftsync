@@ -561,7 +561,7 @@ if (name === 'phone') {
               </div>
             </motion.div>
           </motion.div>
-        )}
+        )};
       </AnimatePresence>
    
   );
