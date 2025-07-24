@@ -39,7 +39,7 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className=" bg-[#111] mx-auto max-w-full  pt-2 sm:pt-12 px-4 sm:px-6 lg:px-8">
+    <section className=" bg-[#111] mx-auto max-w-full  pt-10 px-4 sm:px-6 lg:px-8">
                   {/* Center content */}
  <div className="lg:col-span-6 text-center mb-10 px-4">
 <motion.h1
