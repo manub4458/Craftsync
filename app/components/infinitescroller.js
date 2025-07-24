@@ -60,7 +60,7 @@ const LogoStream = () => {
   };
 
   return (
-    <section className=" py-2 sm:py-10 bg-[#111]">
+    <section className=" py-10 bg-[#111]">
       <motion.h1
         variants={textVariants}
         initial="initial"

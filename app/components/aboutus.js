@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 const DigitalPartnerSection = () => {
   return (
-    <section className=" py-2 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#111]">
+    <section className=" py-16 px-4 sm:px-6 lg:px-8 bg-[#111]">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Text content - left side */}

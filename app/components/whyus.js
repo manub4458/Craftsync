@@ -6,7 +6,7 @@ const ProfessionalsSection = () => {
 
 
   return (
-    <section className=" py-2 sm:py-16  px-4 sm:px-6 lg:px-8 bg-[#111]">
+    <section className=" py-12  px-4 sm:px-6 lg:px-8 bg-[#111]">
       <div className="max-w-7xl mx-auto">
         {/* Header with image */}
  <div className="lg:col-span-6 text-center mb-10 px-4">
