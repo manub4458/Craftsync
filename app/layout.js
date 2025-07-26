@@ -1,4 +1,3 @@
-import { Route } from "lucide-react";
 
 import Footer from "./components/footer";
 import Header from "./components/header";
@@ -10,11 +9,11 @@ import ContactOverlay from './components/letstalk';
 
 export const metadata = {
   title: "TheCraftsync - Digital Agency",
-  description: "Premier digital agency providing web design, development, and digital marketing services",
+  description: "Premier digital agency providing web design, development, and 360 digital marketing services",
     icons: {
-    icon: '/logo.png',
-    shortcut: '/logo.png',
-    apple: '/logo.png',
+    icon: '/3dlogo3.png',
+    shortcut: '/3dlogo3.png',
+    apple: '/3dlogo3.png',
   },
 };
 

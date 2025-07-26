@@ -55,10 +55,10 @@ export default function Footer() {
             <div className="space-y-4">
               <h3 className="font-heading text-xl sm:text-3xl">Services</h3>
               <ul className=" font-paragraph  space-y-2">
-                <li><Link href="#" className="hover:underline text-md sm:text-lg">About</Link></li>
+                <li><Link href="/about-us" className="hover:underline text-md sm:text-lg">About</Link></li>
                 <li><Link href="#" className="hover:underline text-md sm:text-lg">Blog</Link></li>
                 <li><Link href="#" className="hover:underline text-md sm:text-lg">Careers</Link></li>
-                <li><Link href="#" className="hover:underline text-md sm:text-lg">Reviews</Link></li>
+                <li><Link href="/reviews" className="hover:underline text-md sm:text-lg">Reviews</Link></li>
                 <li><Link href="/contact" className="hover:underline text-md sm:text-lg">Contact</Link></li>
               </ul>
             </div>

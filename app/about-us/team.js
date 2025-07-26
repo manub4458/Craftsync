@@ -176,7 +176,7 @@ We’re more than just experts—we’re collaborators, problem-solvers, and cre
                   {/* team member5 */}
             <div className="relative group bg-[#1A1A1A] rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
             <Image
-              src="/shivamm.jpg"
+              src="/team.png"
               alt="Team Member 6"
               width={400}
               height={400}
