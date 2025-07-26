@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const ServicesSection = () => {
 
@@ -276,9 +277,9 @@ Innovative solutions. Strategic brilliance. Unprecedented growth. Let’s amplif
       </div>
          <div className="flex justify-center mt-10">
       
-      
+      <Link href="/services">
             <motion.button
-        className="  px-8 py-4 border-2 cursor-pointer border-[#7D4199] text-white font-heading text-lg rounded-full bg-transparent transition-all duration-300 hover:text-[#7D4199] hover:bg-white"
+        className="  px-8 mb-6 sm:mb-1 py-4 border-2 cursor-pointer border-[#7D4199] text-white font-heading text-lg rounded-full bg-transparent transition-all duration-300 hover:text-[#7D4199] hover:bg-white"
         whileHover={{ 
           scale: 1.05,
         }}
@@ -299,6 +300,7 @@ Innovative solutions. Strategic brilliance. Unprecedented growth. Let’s amplif
       >
         View All Services
       </motion.button>
+      </Link>
             </div>
     </section>
   );

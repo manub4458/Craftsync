@@ -3,6 +3,8 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+
 const testimonials = [
   {
     text: "I have a business of tiles and marbles and had a best experience with The Craft Sync! These guys not just do digital marketing, but also guide like a partner. Gave me free business advice too, which actually helped a lot. Super supportive team, always available, always helpful. My business got good results, more inquiries coming. Highly recommended!",
@@ -11,7 +13,7 @@ const testimonials = [
     image: "/t1.png",
   },
   {
-    text: "If you need top-notch digital marketing without spending a fortune, The Craft Sync is the way to go! They’ve helped my business grow with smart strategies and expert marketing. Feels like having an actual business partner, not just a service provider. Best digital marketing company in Haridwar and Uttarakhand!",
+    text: "If you need top-notch digital marketing without spending a fortune, The Craft Sync is the way to go! They've helped my business grow with smart strategies and expert marketing. Feels like having an actual business partner, not just a service provider. Best digital marketing company in Haridwar and Uttarakhand!",
     name: "Manav Tyagi",
     rating: 5,
     image: "/t2.png",
@@ -39,6 +41,45 @@ const testimonials = [
     name: "Lakshya Chauhan",
     rating: 5,
     image: "/t6.png",
+  },
+];
+
+const testimonials2 = [
+  {
+    text: "The Craft Sync transformed our online presence completely! From zero social media visibility to thousands of engaged followers. Their content strategy is brilliant and they understand our brand voice perfectly. ROI has been incredible - we've seen 300% increase in online inquiries. Professional, creative, and results-driven team!",
+    name: "Ravi Sharma",
+    rating: 5,
+    image: "/vikram.webp",
+  },
+  {
+    text: "Outstanding web development services! The Craft Sync built our e-commerce platform from scratch and it's been running flawlessly for months. Their attention to detail is remarkable - every feature works perfectly. Customer support is top-notch, always quick to respond and solve any issues. Highly professional team!",
+    name: "Priya Singh",
+    rating: 5,
+    image: "/t12.jpg",
+  },
+  {
+    text: "Been working with The Craft Sync for SEO services and the results speak for themselves. Our website now ranks on first page for multiple keywords. Organic traffic has doubled in just 4 months! They provide detailed monthly reports and their strategies are transparent. Best investment for our digital growth!",
+    name: "Amit Kumar",
+    rating: 5,
+    image: "/arjun.webp",
+  },
+  {
+    text: "The Craft Sync helped us launch our startup with a bang! Complete branding, website, and digital marketing strategy - everything was handled professionally. Their team feels like an extension of our company. Budget-friendly services with premium quality results. Couldn't ask for better partners!",
+    name: "Sonia Verma",
+    rating: 5,
+    image: "/t10.jpg",
+  },
+  {
+    text: "Amazing experience with The Craft Sync's social media management! Our Instagram and Facebook engagement has skyrocketed. They create such creative content that perfectly represents our restaurant. Booking inquiries have increased significantly. Team is very responsive and understands our local market well!",
+    name: "Anjali Sharma",
+    rating: 5,
+    image: "/t11.jpg",
+  },
+  {
+    text: "The Craft Sync's graphic design services are exceptional! All our marketing materials, logos, and brochures look so professional now. They captured our vision perfectly and delivered even better than expected. Quick turnaround time and very reasonable pricing. Definitely our go-to design partner!",
+    name: "Neha Gupta",
+    rating: 5,
+    image: "/priya.webp",
   },
 ];
 
@@ -179,12 +220,13 @@ const TestimonialsSection = () => {
         <InfiniteRow testimonials={testimonials} reverse={false} />
         {/* Add space between rows */}
         <div className="h-8" /> {/* You can adjust 'h-8' for more/less space */}
-        {/* Second Row */}
-        <InfiniteRow testimonials={testimonials} reverse={true} />
+        {/* Second Row with different testimonials */}
+        <InfiniteRow testimonials={testimonials2} reverse={true} />
       </div>
       <div className="hidden md:block absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-[#040404] via-[#040404] to-transparent pointer-events-none"></div>
       <div className="hidden md:block absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-[#040404] via-[#040404] to-transparent pointer-events-none"></div>
       <div className="flex justify-center mt-10">
+        <Link href="/reviews" >
         <motion.button
           className="  px-8 py-4 border-2 cursor-pointer border-[#7D4199] text-white font-heading text-lg rounded-full bg-transparent transition-all duration-300 hover:text-[#7D4199] hover:bg-white"
           whileHover={{ 
@@ -207,6 +249,7 @@ const TestimonialsSection = () => {
         >
           Read All Reviews
         </motion.button>
+        </Link>
       </div>
     </section>
   );
