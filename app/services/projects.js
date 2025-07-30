@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const ProjectSection = () => {
   const [currentProject, setCurrentProject] = useState(0);
@@ -414,9 +415,11 @@ const ProjectSection = () => {
                     >
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-10" />
                       <div className="absolute inset-0 rounded-2xl border-2 border-white/10 z-20" />
-                      <img
+                      <Image
                         src={project.image}
                         alt={project.name}
+                        width={384}
+                        height={320}
                         className="w-full h-full object-cover"
                       />
                     </motion.div>
@@ -468,7 +471,6 @@ const ProjectSection = () => {
           ) : (
             /* Desktop Layout */
             <div className="grid grid-cols-12 gap-8 items-center h-full">
-
               <div className="col-span-5">
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -520,7 +522,6 @@ const ProjectSection = () => {
                 </AnimatePresence>
               </div>
 
-    
               <div className="col-span-7 flex justify-center">
                 <div className="relative w-full max-w-2xl">
                   <motion.div
@@ -572,9 +573,11 @@ const ProjectSection = () => {
                       >
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-10" />
                         <div className="absolute inset-0 rounded-3xl border-2 border-white/10 z-20" />
-                        <img
+                        <Image
                           src={project.image}
                           alt={project.name}
+                          width={672}
+                          height={448}
                           className="w-full h-full object-cover"
                         />
                       </motion.div>
@@ -585,7 +588,6 @@ const ProjectSection = () => {
             </div>
           )}
         </div>
-
 
         {isFixed && (
           <motion.div
@@ -601,7 +603,6 @@ const ProjectSection = () => {
           </motion.div>
         )}
 
-  
         <div className="absolute bottom-6 sm:bottom-12 left-1/2 transform -translate-x-1/2">
           <div className="flex gap-3 sm:gap-4">
             {projects.map((_, index) => (
