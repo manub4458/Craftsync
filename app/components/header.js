@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +22,17 @@ const Header = () => {
     exit: { y: "100%", transition: { duration: 0.3, ease: "easeIn" } },
   };
 
+  // Menu items for mobile and initial desktop header
   const menuItems = [
+    { text: "Home", href: "/" },
+    { text: "Contact", href: "/contact" },
+    { text: "Reviews", href: "/reviews" },
+    { text: "About Us", href: "/about-us" },
+    { text: "Our Services", href: "/services" },
+  ];
+
+  // Menu items for scrolled header (md+ screens)
+  const scrolledMenuItems = [
     { text: "Home", href: "/" },
     { text: "About Us", href: "/about-us" },
     { text: "Our Services", href: "/services" },
@@ -41,18 +52,23 @@ const Header = () => {
         style={{ minWidth: "400px", maxWidth: "98vw" }}
       >
         <Link href="/">
-          <motion.img
-            src="/logo.png"
-            alt="Company Logo"
-            className="h-6 w-auto sm:h-8 mr-6" // Add margin-right for space after logo
-            loading="lazy"
-            decoding="async"
+          <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", damping: 15, stiffness: 300 }}
-          />
+          >
+            <Image
+              src="/logo.png"
+              alt="Company Logo"
+              width={32}
+              height={32}
+              className="h-6 w-auto sm:h-8 mr-6"
+              loading="lazy"
+              decoding="async"
+            />
+          </motion.div>
         </Link>
-        <nav className="flex flex-nowrap items-center gap-6 sm:gap-8 md:gap-10 lg:gap-7 mx-2"> {/* Increased gap and added mx-2 for space */}
-          {menuItems.map((item) => (
+        <nav className="flex flex-nowrap items-center gap-6 sm:gap-8 md:gap-10 lg:gap-7 mx-2">
+          {scrolledMenuItems.map((item) => (
             <Link
               key={item.text}
               href={item.href}
@@ -63,28 +79,33 @@ const Header = () => {
           ))}
         </nav>
         <Link href="/contact">
-        <motion.button
-          className="bg-[#7D4199] cursor-pointer text-white text-xs sm:text-sm md:text-base px-4 sm:px-5 md:px-6 py-1 sm:py-1.5 rounded-full hover:bg-purple-300 transition-colors whitespace-nowrap ml-6" // Add margin-left for space before button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          LET&apos;S TALK
-        </motion.button>
+          <motion.button
+            className="bg-[#7D4199] cursor-pointer text-white text-xs sm:text-sm md:text-base px-4 sm:px-5 md:px-6 py-1 sm:py-1.5 rounded-full hover:bg-purple-300 transition-colors whitespace-nowrap ml-6"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            LET&apos;S TALK
+          </motion.button>
         </Link>
       </div>
 
       {/* Initial State (Always visible, including on mobile) */}
       <div className={`flex justify-between items-center p-4 relative w-full ${isScrolled ? 'md:hidden lg:hidden' : ''}`}>
         <Link href="/">
-          <motion.img
-            src="/logo.png"
-            alt="Company Logo"
-            className="h-10 w-auto sm:h-12 md:h-14"
-            loading="lazy"
-            decoding="async"
+          <motion.div
             whileHover={{ scale: 1.05, rotate: 2 }}
             transition={{ type: "spring", damping: 15, stiffness: 300 }}
-          />
+          >
+            <Image
+              src="/logo.png"
+              alt="Company Logo"
+              width={56}
+              height={56}
+              className="h-10 w-auto sm:h-12 md:h-14"
+              loading="lazy"
+              decoding="async"
+            />
+          </motion.div>
         </Link>
 
         <motion.button
@@ -105,24 +126,31 @@ const Header = () => {
             exit="exit"
           >
             <div className="w-full flex justify-between px-2 sm:px-8 items-center">
-              <motion.img
-                src="/logo.png"
-                alt="Company Logo"
-                className="h-10 w-auto sm:h-12 md:h-14"
-                loading="lazy"
-                decoding="async"
+              <motion.div
                 whileHover={{ scale: 1.05, rotate: -2 }}
                 transition={{ type: "spring", damping: 15, stiffness: 300 }}
-              />
+              >
+                <Image
+                  src="/logo.png"
+                  alt="Company Logo"
+                  width={56}
+                  height={56}
+                  className="h-10 w-auto sm:h-12 md:h-14"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </motion.div>
               <motion.button
                 onClick={() => setIsOpen(false)}
                 className="text-black cursor-pointer hover:rotate-90 rounded-full transition-all ease-in-out text-5xl focus:outline-none sm:text-9xl"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <img
+                <Image
                   src="/cross.png"
                   alt="Close Menu"
+                  width={40}
+                  height={40}
                   className="h-8 w-8 sm:h-10 sm:w-10"
                   loading="lazy"
                   decoding="async"
@@ -130,7 +158,7 @@ const Header = () => {
               </motion.button>
             </div>
             <nav className="flex flex-col items-center space-y-6 text-black text-5xl gap-6 sm:text-7xl">
-              {menuItems.reverse().map((item, index) => (
+              {menuItems.map((item, index) => (
                 <motion.div
                   key={item.text}
                   initial={{ opacity: 0, y: 50, rotate: -10 }}
