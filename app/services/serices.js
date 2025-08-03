@@ -23,10 +23,10 @@ const ServicesSection = () => {
   }, [controls]);
 
   return (
-    <section className="services-section bg-[#111] text-white py-12 px-4 sm:py-24 sm:px-6 relative">
+    <section className="services-section bg-[#111] text-white pb-12 pt-6 px-4  sm:px-6 relative">
       {/* First Section - Conditionally Sticky on Medium Screens */}
       <div className="first-services md:sticky md:top-6 z-10">
-        <h2 className="text-4xl sm:text-6xl font-heading mb-8 text-[#FE7743] text-center">What We Do</h2>
+        <h2 className="text-5xl sm:text-7xl font-heading mb-8 text-[#FE7743] text-center">What We Do</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 max-w-5xl mx-auto">
           <motion.div
             className="service-item flex items-start"
