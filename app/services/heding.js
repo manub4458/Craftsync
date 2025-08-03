@@ -41,7 +41,7 @@ const Heading = () => {
   return (
     <>
 
-    <div className="bg-[#111] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex items-center justify-center">
+    <div className="bg-[#111] mx-auto px-4 sm:px-6 lg:px-8 pb-20 pt-20 md:pt-30 flex items-center justify-center">
       <div className="w-full max-w-7xl text-center">
         <motion.div
           variants={textVariants}

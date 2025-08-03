@@ -53,9 +53,10 @@ export default function Footer() {
           {/* Right column - 50% */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div className="space-y-4">
-              <h3 className="font-heading text-xl sm:text-3xl">Services</h3>
+              <h3 className="font-heading text-xl sm:text-3xl">Explore</h3>
               <ul className=" font-paragraph  space-y-2">
                 <li><Link href="/about-us" className="hover:underline text-md sm:text-lg">About</Link></li>
+                  <li><Link href="/services" className="hover:underline text-md sm:text-lg">Servies</Link></li>
                 <li><Link href="#" className="hover:underline text-md sm:text-lg">Blog</Link></li>
                 <li><Link href="#" className="hover:underline text-md sm:text-lg">Careers</Link></li>
                 <li><Link href="/reviews" className="hover:underline text-md sm:text-lg">Reviews</Link></li>
