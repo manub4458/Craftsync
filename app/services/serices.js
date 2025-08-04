@@ -23,7 +23,7 @@ const ServicesSection = () => {
   }, [controls]);
 
   return (
-    <section className="services-section bg-[#111] text-white pb-12 pt-6 px-4  sm:px-6 relative">
+    <section className="services-section bg-[#111] text-white pb-12 pt-6 px-4 sm:px-6 relative">
       {/* First Section - Conditionally Sticky on Medium Screens */}
       <div className="first-services md:sticky md:top-6 z-10">
         <h2 className="text-5xl sm:text-7xl font-heading mb-8 text-[#FE7743] text-center">What We Do</h2>
@@ -154,7 +154,7 @@ const ServicesSection = () => {
       {/* Second Section - Slides on Top with Black Background */}
       <div className="second-services relative z-20 mt-2">
         <motion.div
-          className="bg-[#111] p-12"
+          className="bg-[#111] p-12 sm:p-12 px-4"
           initial={{ y: "10vh" }}
           whileInView={{ y: 0 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
