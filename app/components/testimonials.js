@@ -10,38 +10,52 @@ gsap.registerPlugin(ScrollTrigger);
 
 const testimonials = [
   {
-    text: "I have a business of tiles and marbles and had a best experience with The Craft Sync! These guys not just do digital marketing, but also guide like a partner. Gave me free business advice too, which actually helped a lot. Super supportive team, always available, always helpful. My business got good results, more inquiries coming. Highly recommended!",
+    text: "TheCraftSync delivered exceptional results for our business. Professional, reliable, and always responsive to our needs.",
     name: "Nitin Pal",
+    company: "Tiles & Marbles",
     rating: 5,
     image: "/t1.png",
   },
   {
-    text: "If you need top-notch digital marketing without spending a fortune, The Craft Sync is the way to go! They've helped my business grow with smart strategies and expert marketing. Feels like having an actual business partner, not just a service provider. Best digital marketing company in Haridwar and Uttarakhand!",
-    name: "Manav Tyagi",
+    text: "Outstanding digital marketing services with excellent ROI. The team feels like true business partners.",
+    name: "Meucart",
+    company: "Business Owner",
     rating: 5,
-    image: "/t2.png",
+    image: "/logo12.avif",
   },
+
   {
-    text: "The Craft Sync might be a small company, but man, they deliver like the big guys! Super fast, super effective, and way more affordable. They handle all my digital stuff—social media, website, marketing—you name it. Feels more like a business partner than just a service. Always there, even late nights, plus they give free advice that actually works! Definitely recommend them!",
+    text: "Fast, effective, and affordable. They handle everything seamlessly - social media, website, marketing. Highly recommended!",
     name: "Paradise Uttarakhand",
+    company: "Tourism",
     rating: 5,
     image: "/t3.png",
   },
-  {
-    text: "I recently gotta chance to with The Craft Sync, their innovative ideas, technical expertise, and commitment to quality is excellent. Their team delivers scalable, future-proof solutions while maintaining excellent communication and responsiveness. With a strong focus on customer collaboration and timely execution, they are a reliable choice for any software development needs. Highly recommended",
-    name: "Winston Vivek",
+     {
+    text: "“The team did a fantastic job bringing my vision to life.They built a seamless, user-friendly web app with excellent UI/UX design",
+    name: "Balkees Abderrehman",
+    company: "Business Owner",
     rating: 5,
-    image: "/t4.png",
+    image: "/forbes.png",
   },
   {
-    text: "Working with The Craft Sync has been a fantastic experience for us at Paradise Bliss Tours! 🌟Initially, we were just starting and budget was a big concern, but Manik and his team truly supported us by offering very reasonable pricing without compromising on quality.Unhone sirf hamare expectations poore nahi kiye, balki kaafi had tak exceed bhi kiya. 😇",
+    text: "Innovative solutions with excellent technical expertise. Great communication and timely delivery every time.",
+    name: "FPO Connect",
+    company: "Tech Consultant",
+    rating: 5,
+    image: "/logo13.png",
+  },
+  {
+    text: "Amazing support from day one! Quality work at reasonable pricing. They exceeded our expectations completely.",
     name: "Paradise Bliss Tours",
+    company: "Travel Agency",
     rating: 5,
     image: "/t5.png",
   },
   {
-    text: "I had pleasure of working with the craft sync and I must say this is the best digital marketing agency in Haridwar. Me and my friend wants to run a campaign related to property dealing, and the craft sync helped us very well getting the good leads.",
+    text: "Best digital marketing agency in Haridwar! Helped us generate quality leads for our property business.",
     name: "Lakshya Chauhan",
+    company: "Real Estate",
     rating: 5,
     image: "/t6.png",
   },
@@ -49,91 +63,128 @@ const testimonials = [
 
 const testimonials2 = [
   {
-    text: "The Craft Sync transformed our online presence completely! From zero social media visibility to thousands of engaged followers. Their content strategy is brilliant and they understand our brand voice perfectly. ROI has been incredible - we've seen 300% increase in online inquiries. Professional, creative, and results-driven team!",
+    text: "Transformed our online presence completely! 300% increase in inquiries. Creative and results-driven team.",
     name: "ROR",
+    company: "Digital Services",
     rating: 5,
     image: "/logo8.jpg",
   },
   {
-    text: "Outstanding web development services! The Craft Sync built our e-commerce platform from scratch and it's been running flawlessly for months. Their attention to detail is remarkable - every feature works perfectly. Customer support is top-notch, always quick to respond and solve any issues. Highly professional team!",
+    text: "Flawless e-commerce platform development. Excellent customer support and attention to detail.",
     name: "OSexifi",
+    company: "E-commerce",
     rating: 5,
     image: "/logo5.png",
   },
   {
-    text: "Been working with The Craft Sync for SEO services and the results speak for themselves. Our website now ranks on first page for multiple keywords. Organic traffic has doubled in just 4 months! They provide detailed monthly reports and their strategies are transparent. Best investment for our digital growth!",
+    text: "First page rankings achieved in 4 months. Organic traffic doubled! Transparent and effective SEO strategies.",
     name: "Beards & Shears",
+    company: "Grooming Services",
     rating: 5,
     image: "/beard.png",
   },
   {
-    text: "The Craft Sync helped us launch our startup with a bang! Complete branding, website, and digital marketing strategy - everything was handled professionally. Their team feels like an extension of our company. Budget-friendly services with premium quality results. Couldn't ask for better partners!",
+    text: "Complete startup launch solution - branding, website, marketing. Professional team, premium quality results.",
     name: "IISM",
+    company: "Education",
     rating: 5,
     image: "/logo9.png",
   },
   {
-    text: "Amazing experience with The Craft Sync! The E-commerce website they built for us is stunning and user-friendly. They understood our requirements perfectly and delivered on time. ",
+    text: "Stunning, user-friendly e-commerce website delivered on time. Perfect understanding of our requirements.",
     name: "Kalpraag",
+    company: "E-commerce",
     rating: 5,
-    image: "/logo7.avif",
+    image: "/logo11.png",
   },
   {
-    text: "The Craft Sync's graphic design services are exceptional! All our marketing materials, logos, and brochures look so professional now. They captured our vision perfectly and delivered even better than expected. Quick turnaround time and very reasonable pricing. Definitely our go-to design partner!",
-    name: "ROR",
+    text: "Exceptional graphic design services! Professional marketing materials with quick turnaround and great pricing.",
+    name: "FPCL",
+    company: "Marketing",
     rating: 5,
-    image: "/logo8.jpg",
+    image: "/logo10.png",
   },
 ];
 
 const renderStars = (count) => (
   <div className="flex items-center gap-1">
     {[...Array(count)].map((_, i) => (
-      <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+      <svg key={i} className="w-4 h-4 text-amber-300" fill="currentColor" viewBox="0 0 20 20">
         <polygon points="10,1 12.59,7.36 19.51,7.36 13.96,11.63 16.55,17.99 10,13.72 3.45,17.99 6.04,11.63 0.49,7.36 7.41,7.36" />
       </svg>
     ))}
   </div>
 );
 
-const InfiniteRow = ({ testimonials, reverse }) => (
-  <div
-    className="overflow-hidden w-full"
-    style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)' }}
-  >
+const InfiniteRow = ({ testimonials, reverse }) => {
+  const gradients = [
+    'from-purple-500/10 to-blue-500/5',
+    'from-orange-500/10 to-pink-500/5',
+    'from-teal-500/10 to-green-500/5',
+    'from-indigo-500/10 to-purple-500/5',
+  ];
+  
+  return (
     <div
-      className="flex space-x-6"
-      style={{
-        animation: `${reverse ? 'scrollReverse' : 'scrollForward'} 20s linear infinite`,
-        willChange: 'transform',
-      }}
+      className="overflow-hidden w-full"
+      style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)' }}
     >
-      {[...testimonials, ...testimonials].map((testimonial, i) => (
-        <div key={i} className="bg-[#1A1A1A] p-6 rounded-2xl shadow-lg min-w-[300px] md:min-w-[350px] max-w-[350px] h-[400px] flex flex-col">
-          <div className="text-gray-400 text-sm md:text-base overflow-y-auto pr-2 flex-grow">
-            {testimonial.text}
-          </div>
-          <div className="mt-4">
-            <div className="border-t border-gray-600 mb-4"></div>
-            <div className="flex items-center gap-4">
-              <Image
-                src={testimonial.image}
-                alt={testimonial.name}
-                width={50}
-                height={50}
-                className="rounded-full h-12 w-12 object-cover"
-              />
-              <div>
-                <p className="text-white font-semibold">{testimonial.name}</p>
-                {renderStars(testimonial.rating)}
+      <div
+        className="flex space-x-4"
+        style={{
+          animation: `${reverse ? 'scrollReverse' : 'scrollForward'} 35s linear infinite`,
+          willChange: 'transform',
+        }}
+      >
+        {[...testimonials, ...testimonials].map((testimonial, i) => {
+          const gradientClass = gradients[i % gradients.length];
+          return (
+            <div 
+              key={i} 
+              className={`bg-gradient-to-br ${gradientClass} backdrop-blur-sm p-6 rounded-2xl shadow-xl min-w-[300px] max-w-[300px] h-[250px] flex flex-col justify-between relative overflow-hidden hover:transform hover:-translate-y-2 transition-all duration-500 border border-white/10 hover:border-white/20 hover:shadow-2xl`}
+              style={{
+                background: 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)',
+                backdropFilter: 'blur(10px)',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1)',
+              }}
+            >
+              {/* Quote icon */}
+              <div className="absolute top-4 right-4 text-white/20">
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 32 32">
+                  <path d="M10 8c-3.3 0-6 2.7-6 6v10h8V14h-4c0-1.1.9-2 2-2V8zm12 0c-3.3 0-6 2.7-6 6v10h8V14h-4c0-1.1.9-2 2-2V8z"/>
+                </svg>
+              </div>
+              
+              <div className="text-gray-100 text-sm leading-relaxed font-normal pt-4">
+                {testimonial.text}
+              </div>
+              
+              <div className="mt-auto pt-4">
+                <div className="border-t border-white/20 mb-4"></div>
+                <div className="flex items-center gap-4">
+                  <div className="relative">
+                    <Image
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      width={48}
+                      height={48}
+                      className="rounded-full h-12 w-12 object-cover border-2 border-white/30"
+                    />
+                    <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-gray-900"></div>
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-white font-semibold text-sm mb-2">{testimonial.name}</p>
+                    {renderStars(testimonial.rating)}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      ))}
+          );
+        })}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const TestimonialsSection = () => {
   const sectionRef = useRef(null);
@@ -231,28 +282,29 @@ const TestimonialsSection = () => {
       ease: 'power2.out',
     });
 
-    button.addEventListener('mouseenter', () => {
+    const handleMouseEnter = () => {
       button.style.boxShadow = '0 0 0 8px rgba(125, 65, 153, 0.2)';
       buttonTl.play();
-    });
-    button.addEventListener('mouseleave', () => {
+    };
+
+    const handleMouseLeave = () => {
       button.style.boxShadow = 'none';
       buttonTl.reverse();
-    });
-    button.addEventListener('mousedown', () => buttonTapTl.play());
-    button.addEventListener('mouseup', () => buttonTapTl.reverse());
+    };
+
+    const handleMouseDown = () => buttonTapTl.play();
+    const handleMouseUp = () => buttonTapTl.reverse();
+
+    button.addEventListener('mouseenter', handleMouseEnter);
+    button.addEventListener('mouseleave', handleMouseLeave);
+    button.addEventListener('mousedown', handleMouseDown);
+    button.addEventListener('mouseup', handleMouseUp);
 
     return () => {
-      button.removeEventListener('mouseenter', () => {
-        button.style.boxShadow = 'none';
-        buttonTl.reverse();
-      });
-      button.removeEventListener('mouseleave', () => {
-        button.style.boxShadow = 'none';
-        buttonTl.reverse();
-      });
-      button.removeEventListener('mousedown', () => buttonTapTl.play());
-      button.removeEventListener('mouseup', () => buttonTapTl.reverse());
+      button.removeEventListener('mouseenter', handleMouseEnter);
+      button.removeEventListener('mouseleave', handleMouseLeave);
+      button.removeEventListener('mousedown', handleMouseDown);
+      button.removeEventListener('mouseup', handleMouseUp);
     };
   }, []);
 
@@ -271,8 +323,8 @@ const TestimonialsSection = () => {
         `}
       </style>
       <div className="container mx-auto px-4">
-        <div className="lg:col-span-6 text-center mb-10 px-4">
-          <h1 className="heading font-heading mt-6 word-subheading uppercase text-5xl sm:text-8xl md:text-8xl lg:text-7xl xl:text-7xl 2xl:text-[6rem] mb-6 text-center">
+        <div className="lg:col-span-6 text-center mb-16 px-4">
+          <h1 className="heading font-heading mt-6 word-subheading uppercase text-5xl sm:text-8xl md:text-8xl lg:text-7xl xl:text-7xl 2xl:text-[6rem] mb-8 text-center">
             <span className="text-white">DISCOVER WHY OUR <br/> </span>
             <span className="text-white relative inline-block flex items-center justify-center gap-2 lg:gap-4">
               CLIENTS ADORE
@@ -284,23 +336,29 @@ const TestimonialsSection = () => {
             </span>
             <span className="text-white">US</span>
           </h1>
-          <p className="subtext text-gray-300 font-paragraph text-lg sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            We focus on precision, honor our commitments, and strive to exceed expectations, which builds the trust our clients rely on.
+          <p className="subtext text-gray-300 font-paragraph text-xl sm:text-xl max-w-3xl mx-auto leading-relaxed opacity-90">
+            We're your friendly digital partners, making complex tech simple and delivering results that matter to your business growth.
           </p>
         </div>
+        
         {/* First Row */}
         <InfiniteRow testimonials={testimonials} reverse={false} />
-        {/* Add space between rows */}
-        <div className="h-8" />
-        {/* Second Row with different testimonials */}
+        
+        {/* Space between rows */}
+        <div className="h-12" />
+        
+        {/* Second Row */}
         <InfiniteRow testimonials={testimonials2} reverse={true} />
       </div>
-      <div className="hidden md:block absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-[#040404] via-[#040404] to-transparent pointer-events-none"></div>
-      <div className="hidden md:block absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-[#040404] via-[#040404] to-transparent pointer-events-none"></div>
-      <div className="flex justify-center mt-10">
+      
+      {/* Gradient overlays */}
+      <div className="hidden md:block absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-[#111] via-[#111] to-transparent pointer-events-none z-10"></div>
+      <div className="hidden md:block absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-[#111] via-[#111] to-transparent pointer-events-none z-10"></div>
+      
+      <div className="flex justify-center mt-16">
         <Link href="/reviews">
           <button
-            className="review-button px-8 py-4 border-2 cursor-pointer border-[#7D4199] text-white font-heading text-lg rounded-full bg-transparent transition-all duration-300 hover:text-[#7D4199] hover:bg-white"
+            className="review-button px-8 py-4 border-2 cursor-pointer border-[#7D4199] text-white font-heading text-lg rounded-full bg-transparent transition-all duration-300 hover:text-[#7D4199] hover:bg-white hover:shadow-lg"
             style={{
               boxShadow: 'none',
               transition: 'all 0.3s ease',
