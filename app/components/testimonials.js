@@ -326,7 +326,7 @@ const TestimonialsSection = () => {
             <span className="text-white">US</span>
           </h1>
           <p className="subtext text-gray-300 font-paragraph text-xl sm:text-xl max-w-3xl mx-auto leading-relaxed opacity-90">
-            We're your friendly digital partners, making complex tech simple and delivering results that matter to your business growth.
+            We&apos;re your friendly digital partners, making complex tech simple and delivering results that matter to your business growth.
           </p>
         </div>
         <InfiniteRow testimonials={testimonials} reverse={false} />
