@@ -121,14 +121,14 @@ const HeroSection = () => {
   if (!mounted) return null;
 
   return (
-    <section className="relative  bg-[#111] overflow-hidden py-20 px-4">
+    <section className="relative h-screen  bg-[#111] overflow-hidden py-20 px-4">
       {/* Background gradient effects */}
       {/* <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-blue-900/20"></div>
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div> */}
 
-      <div className="relative max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center ">
+      <div className="relative max-w-7xl h-screen mx-auto">
+        <div className="grid grid-cols-1 h-screen lg:grid-cols-12 gap-8 items-center ">
           
           {/* Left floating images */}
           <div className="hidden lg:block lg:col-span-3 relative">
@@ -194,7 +194,7 @@ const HeroSection = () => {
       
       <Link href="/contact">
             <motion.button
-        className="  px-8 py-4 border-2 cursor-pointer border-[#7D4199] text-white font-heading text-lg rounded-full bg-transparent transition-all duration-300 hover:text-[#7D4199] hover:bg-white"
+        className="  px-8 py-4 border-2 cursor-pointer mb-4 border-[#7D4199] text-white font-heading text-lg rounded-full bg-transparent transition-all duration-300 hover:text-[#7D4199] hover:bg-white"
         whileHover={{ 
           scale: 1.05,
         }}
