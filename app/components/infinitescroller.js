@@ -3,12 +3,19 @@ import { motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
 const logos = [
-  { src: '/logo1.png', url: 'https://www.paradiseuttarakhand.com/' },
+  { src: '/logo18.png', url: 'https://www.paradiseuttarakhand.com/' },
   { src: '/logo4.webp', url: 'https://avishdynamics.com/' },
   { src: '/logo3.svg', url: 'https://www.barista.co.in/' },
   { src: '/logo6.png', url: 'https://paradiseblisstours.com/' },
   { src: '/logo5.png', url: 'https://example.com/logo5' },
     { src: '/beard.png', url: 'https://beardsnshears.in/' },
+      { src: '/logo16.png', url: 'https://fpcl.in/' },
+        { src: '/logo15.png', url: 'https://meucart.com/' },
+         { src: '/logo17.png', url: 'https://fpoconnect.in/' },
+           { src: '/ink.png', url: '/' },
+        
+        
+        
 ];
 
 const LogoStream = () => {
