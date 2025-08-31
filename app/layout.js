@@ -3,7 +3,8 @@ import Header from "./components/header";
 import "./globals.css";
 import RouteLoader from "./components/routeloader";
 import ContactOverlay from './components/letstalk';
-
+import { Scroll } from "lucide-react";
+import ScrollToTop from "./components/scrolltotop";
 export const metadata = {
   title: "TheCraftsync - Digital Agency",
   description: "Premier digital agency providing web design, development, and 360 digital marketing services",
@@ -43,7 +44,7 @@ export default function RootLayout({ children }) {
           ></iframe>
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-
+        <ScrollToTop />  
         <RouteLoader />
         <ContactOverlay />
         <Header />
