@@ -9,6 +9,7 @@ import LogoStream from './components/infinitescroller';
 import ServicesSection from './components/services';
 import TestimonialsSection from './components/testimonials';
 import ProfessionalsSection from './components/whyus';
+import ScrollToTop from './components/scrolltotop';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -92,6 +93,7 @@ export default function Home() {
           delay: 0.4,
         }}
       >
+        <ScrollToTop />
         <Hero />
         <DigitalPartnerSection />
         <LogoStream />

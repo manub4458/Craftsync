@@ -190,7 +190,7 @@ const ContactPage = () => {
 
                 Let&apos;s make <br />
 
-                Let &apos; s make <br />
+                
 
                 it happen{' '}
                 <span className="inline-block w-12 h-12 border-2 border-white rounded-full relative overflow-hidden">
